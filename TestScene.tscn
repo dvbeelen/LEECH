@@ -9,9 +9,11 @@ size = Vector3( 30, 2, 30 )
 
 [node name="TestScene" type="Spatial"]
 
-[node name="Area" type="Area" parent="."]
+[node name="Area" type="RigidBody" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -6.29472, 0 )
-gravity_vec = Vector3( 0, -3, -2 )
+mode = 1
+mass = 0.00102041
+gravity_scale = 0.0
 
 [node name="CollisionShape" type="CollisionShape" parent="Area"]
 transform = Transform( 15, 0, 0, 0, 1, 0, 0, 0, 15, 0, 0, 0 )

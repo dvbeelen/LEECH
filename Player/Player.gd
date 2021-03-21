@@ -8,8 +8,8 @@ var moveSpeed: float = 5.0
 var gravity: float = 12.0
 
 #Camera 
-var minLookAngle: float = -90.0
-var maxLookAngle: float = 90.0
+var minLookAngle: float = -180.0
+var maxLookAngle: float = 180.0
 var lookSensitivity : float = 10.0
 
 #Vectors
@@ -38,13 +38,13 @@ func _physics_process(delta):
 	var input = Vector2()
 	
 #	Movement Inputs
-	if Input.is_action_just_pressed("move_forward"):
+	if Input.is_action_pressed("move_forward"):
 		input.y -= 1
-	if Input.is_action_just_pressed("move_backward"):
+	if Input.is_action_pressed("move_backward"):
 		input.y += 1
-	if Input.is_action_just_pressed("move_left"):
+	if Input.is_action_pressed("move_left"):
 		input.x -= 1
-	if Input.is_action_just_pressed("move_right"):
+	if Input.is_action_pressed("move_right"):
 		input.x += 1
 	
 	input = input.normalized()
