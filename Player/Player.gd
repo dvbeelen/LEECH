@@ -27,6 +27,10 @@ func _process(delta):
 #	Reset mouse vector
 	mouseDelta = Vector2()
 
+func _input(event):
+	if event is InputEventMouseMotion:
+		mouseDelta = event.relative
+
 func _physics_process(delta):
 	velocity.x = 0
 	velocity.z = 0
