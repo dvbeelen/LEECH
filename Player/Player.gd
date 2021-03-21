@@ -1,7 +1,7 @@
 extends KinematicBody
 
 #Components
-onready var Camera = $camera
+onready var camera = $camera
 
 #Physics
 var moveSpeed: float = 5.0
@@ -14,7 +14,18 @@ var lookSensitivity : float = 10.0
 
 #Vectors
 var velocity: Vector3 = Vector3()
-var mouseDeltea: Vector2 = Vector2()
+var mouseDelta: Vector2 = Vector2()
+
+func _process(delta):
+#	Move Camera based on mouse movement
+	camera.rotation_degrees.x -= mouseDelta.y * lookSensitivity * delta
+	camera.rotation_degrees.x = clamp(camera.rotation_degrees.x, minLookAngle, maxLookAngle)
+	
+#	Rotate player based on mouse movement
+	rotation_degrees.y -= mouseDelta.x * lookSensitivity * delta
+	
+#	Reset mouse vector
+	mouseDelta = Vector2()
 
 func _physics_process(delta):
 	velocity.x = 0
@@ -42,7 +53,7 @@ func _physics_process(delta):
 	
 #	Set the velocity
 	velocity.x = relativeDir.x * moveSpeed
-	velocity.z = relativeDir * moveSpeed
+	velocity.z = relativeDir.z * moveSpeed
 	
 #	Apply gravity
 	velocity.y -= gravity * delta
