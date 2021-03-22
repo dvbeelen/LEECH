@@ -26,6 +26,9 @@ func _process(delta):
 	
 #	Reset mouse vector
 	mouseDelta = Vector2()
+	
+##	Reset mouse to center of screen
+#	get_viewport().warp_mouse(get_viewport().size / 2)
 
 func _input(event):
 	if event is InputEventMouseMotion:
