@@ -8,8 +8,8 @@ var moveSpeed: float = 5.0
 var gravity: float = 12.0
 
 #Camera 
-var minLookAngle: float = -180.0
-var maxLookAngle: float = 180.0
+var minLookAngle: float = -360.0
+var maxLookAngle: float = 360.0
 var lookSensitivity : float = 10.0
 
 #Vectors
