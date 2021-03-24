@@ -11,7 +11,7 @@
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
 
 [node name="TextTrigger" parent="." instance=ExtResource( 2 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.07198, 0.18474, 0 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.07198, 0.348166, 0 )
 
 [node name="Room" type="Spatial" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.01, 0 )

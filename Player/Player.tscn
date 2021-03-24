@@ -6,7 +6,9 @@
 radius = 0.5
 height = 1.5
 
-[node name="Player" type="KinematicBody"]
+[node name="Player" type="KinematicBody" groups=[
+"Player",
+]]
 transform = Transform( 0.8, 0, 0, 0, 0.8, 0, 0, 0, 1, 0, 0, 0 )
 script = ExtResource( 1 )
 
