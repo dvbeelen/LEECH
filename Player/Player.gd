@@ -8,15 +8,23 @@ var moveSpeed: float = 5.0
 var gravity: float = 12.0
 
 #Camera 
-var minLookAngle: float = -360.0
-var maxLookAngle: float = 360.0
+var minLookAngle: float = -90.0
+var maxLookAngle: float = 90.0
 var lookSensitivity : float = 10.0
 
 #Vectors
 var velocity: Vector3 = Vector3()
 var mouseDelta: Vector2 = Vector2()
 
+#On start, hide the mouse
+func _ready():
+	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+
 func _process(delta):
+#	Close game if escape is pressed
+	if Input.is_action_just_pressed("escape"):
+		get_tree().quit()
+	
 #	Move Camera based on mouse movement
 	camera.rotation_degrees.x -= mouseDelta.y * lookSensitivity * delta
 	camera.rotation_degrees.x = clamp(camera.rotation_degrees.x, minLookAngle, maxLookAngle)
