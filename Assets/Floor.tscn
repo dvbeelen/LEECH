@@ -23,6 +23,7 @@ surfaces/0 = {
 mode = 1
 
 [node name="Cube" type="MeshInstance" parent="."]
+use_in_baked_light = true
 mesh = SubResource( 1 )
 material/0 = null
 

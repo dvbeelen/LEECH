@@ -17,8 +17,8 @@ var velocity: Vector3 = Vector3()
 var mouseDelta: Vector2 = Vector2()
 
 #On start, hide the mouse
-func _ready():
-	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+#func _ready():
+#	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 
 func _process(delta):
 #	Close game if escape is pressed
