@@ -96,10 +96,11 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.5, 0, -3 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.5, 0, -6 )
 
 [node name="DirectionalLight" type="DirectionalLight" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.18097, 9.48579, 19.0792 )
+transform = Transform( 1, 0, 0, 0, 1.19249e-08, 1, 0, -1, 1.19249e-08, 0, 6.11859, 0.205259 )
 shadow_enabled = true
+shadow_color = Color( 1, 1, 1, 1 )
 
 [node name="Texts" type="Spatial" parent="."]
 
 [node name="TextDisplay" parent="Texts" instance=ExtResource( 5 )]
-transform = Transform( -0.999905, 0, -0.0137702, 0, 1, 0, 0.0137702, 0, -0.999905, -0.629526, 2.74674, 6.31754 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.441, 2.69491, -5.77179 )

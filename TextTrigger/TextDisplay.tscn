@@ -3,6 +3,7 @@
 [ext_resource path="res://fonts/Bookman Old Style Regular.ttf" type="DynamicFontData" id=1]
 
 [sub_resource type="DynamicFont" id=1]
+outline_color = Color( 0, 0, 0, 1 )
 font_data = ExtResource( 1 )
 
 [sub_resource type="QuadMesh" id=2]
@@ -34,6 +35,9 @@ margin_top = 4.0
 margin_right = 132.0
 margin_bottom = 35.0
 custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 text = "The color is repellant, almost revolting ; a smouldering unclean yellow,
 strangely faded by the slow-turning sunlight. 
 "
