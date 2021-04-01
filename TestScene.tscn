@@ -1,99 +1,17 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://TextTrigger/TextTrigger.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Assets/Floor.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Assets/Wall.tscn" type="PackedScene" id=4]
 [ext_resource path="res://TextTrigger/TextDisplay.tscn" type="PackedScene" id=5]
+[ext_resource path="res://TestScene.gd" type="Script" id=6]
 
 [node name="TestScene" type="Spatial"]
+script = ExtResource( 6 )
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
-
-[node name="TextTrigger" parent="." instance=ExtResource( 2 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.07198, 0.348166, 0 )
-
-[node name="Room" type="Spatial" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.01, 0 )
-
-[node name="Floor" parent="Room" instance=ExtResource( 3 )]
-
-[node name="Ceiling" parent="Room" instance=ExtResource( 3 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.08467, 0 )
-
-[node name="Walls" type="Spatial" parent="Room"]
-
-[node name="Wall1" type="Spatial" parent="Room/Walls"]
-
-[node name="Wall" parent="Room/Walls/Wall1" instance=ExtResource( 4 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.5, 0, 0 )
-
-[node name="Wall2" parent="Room/Walls/Wall1" instance=ExtResource( 4 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.5, 0, 3 )
-
-[node name="Wall3" parent="Room/Walls/Wall1" instance=ExtResource( 4 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.5, 0, 6 )
-
-[node name="Wall4" parent="Room/Walls/Wall1" instance=ExtResource( 4 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.5, 0, -3 )
-
-[node name="Wall5" parent="Room/Walls/Wall1" instance=ExtResource( 4 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.5, 0, -6 )
-
-[node name="Wall2" type="Spatial" parent="Room/Walls"]
-transform = Transform( -1.62921e-07, 0, 1, 0, 1, 0, -1, 0, -1.62921e-07, 0, 0, 0 )
-
-[node name="Wall" parent="Room/Walls/Wall2" instance=ExtResource( 4 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.5, 0, 0 )
-
-[node name="Wall2" parent="Room/Walls/Wall2" instance=ExtResource( 4 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.5, 0, 3 )
-
-[node name="Wall3" parent="Room/Walls/Wall2" instance=ExtResource( 4 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.5, 0, 6 )
-
-[node name="Wall4" parent="Room/Walls/Wall2" instance=ExtResource( 4 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.5, 0, -3 )
-
-[node name="Wall5" parent="Room/Walls/Wall2" instance=ExtResource( 4 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.5, 0, -6 )
-
-[node name="Wall3" type="Spatial" parent="Room/Walls"]
-transform = Transform( -1, 0, -3.25841e-07, 0, 1, 0, 3.25841e-07, 0, -1, 0, 0, 0 )
-
-[node name="Wall" parent="Room/Walls/Wall3" instance=ExtResource( 4 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.5, 0, 0 )
-
-[node name="Wall2" parent="Room/Walls/Wall3" instance=ExtResource( 4 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.5, 0, 3 )
-
-[node name="Wall3" parent="Room/Walls/Wall3" instance=ExtResource( 4 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.5, 0, 6 )
-
-[node name="Wall4" parent="Room/Walls/Wall3" instance=ExtResource( 4 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.5, 0, -3 )
-
-[node name="Wall5" parent="Room/Walls/Wall3" instance=ExtResource( 4 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.5, 0, -6 )
-
-[node name="Wall4" type="Spatial" parent="Room/Walls"]
-transform = Transform( 1.19249e-08, 0, -1, 0, 1, 0, 1, 0, 1.19249e-08, 0, 0, 0 )
-
-[node name="Wall" parent="Room/Walls/Wall4" instance=ExtResource( 4 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.5, 0, 0 )
-
-[node name="Wall2" parent="Room/Walls/Wall4" instance=ExtResource( 4 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.5, 0, 3 )
-
-[node name="Wall3" parent="Room/Walls/Wall4" instance=ExtResource( 4 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.5, 0, 6 )
-
-[node name="Wall4" parent="Room/Walls/Wall4" instance=ExtResource( 4 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.5, 0, -3 )
-
-[node name="Wall5" parent="Room/Walls/Wall4" instance=ExtResource( 4 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.5, 0, -6 )
 
 [node name="DirectionalLight" type="DirectionalLight" parent="."]
 transform = Transform( 1, 0, 0, 0, 1.19249e-08, 1, 0, -1, 1.19249e-08, 0, 6.11859, 0.205259 )
@@ -102,5 +20,209 @@ shadow_color = Color( 1, 1, 1, 1 )
 
 [node name="Texts" type="Spatial" parent="."]
 
-[node name="TextDisplay" parent="Texts" instance=ExtResource( 5 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.441, 2.69491, -5.77179 )
+[node name="TextDisplay1" parent="Texts" instance=ExtResource( 5 )]
+transform = Transform( -1, 0, 3.25841e-07, 0, 1, 0, -3.25841e-07, 0, -1, -4.37868, 2.69491, 6.43953 )
+
+[node name="TextDisplay2" parent="Texts" instance=ExtResource( 5 )]
+transform = Transform( -1.62921e-07, 0, -1, 0, 1, 0, 1, 0, -1.62921e-07, 2.17587, 2.69491, 15.9983 )
+
+[node name="TextDisplay3" parent="Texts" instance=ExtResource( 5 )]
+transform = Transform( -1, 0, -3.25841e-07, 0, 1, 0, 3.25841e-07, 0, -1, -0.331631, 2.69491, 30.8146 )
+
+[node name="Triggers" type="Spatial" parent="."]
+
+[node name="TextTrigger" parent="Triggers" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.164032, 2.02949, 2.39116 )
+
+[node name="TextTrigger2" parent="Triggers" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.164032, 2.02949, 11.6544 )
+
+[node name="TextTrigger3" parent="Triggers" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.164032, 2.02949, 23.7048 )
+
+[node name="Assets" type="Spatial" parent="."]
+
+[node name="Room" type="Spatial" parent="Assets"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.01, 0 )
+
+[node name="Floor" parent="Assets/Room" instance=ExtResource( 3 )]
+
+[node name="Walls" type="Spatial" parent="Assets/Room"]
+
+[node name="Wall1" type="Spatial" parent="Assets/Room/Walls"]
+
+[node name="Wall" parent="Assets/Room/Walls/Wall1" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.5, 0, 0 )
+
+[node name="Wall2" parent="Assets/Room/Walls/Wall1" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.5, 0, 3 )
+
+[node name="Wall3" parent="Assets/Room/Walls/Wall1" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.5, 0, 6 )
+
+[node name="Wall4" parent="Assets/Room/Walls/Wall1" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.5, 0, -3 )
+
+[node name="Wall5" parent="Assets/Room/Walls/Wall1" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.5, 0, -6 )
+
+[node name="Wall2" type="Spatial" parent="Assets/Room/Walls"]
+transform = Transform( -1.62921e-07, 0, 1, 0, 1, 0, -1, 0, -1.62921e-07, 0, 0, 0 )
+
+[node name="Wall2" parent="Assets/Room/Walls/Wall2" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.5, 0, 3 )
+
+[node name="Wall3" parent="Assets/Room/Walls/Wall2" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.5, 0, 6 )
+
+[node name="Wall4" parent="Assets/Room/Walls/Wall2" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.5, 0, -3 )
+
+[node name="Wall5" parent="Assets/Room/Walls/Wall2" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.5, 0, -6 )
+
+[node name="Wall3" type="Spatial" parent="Assets/Room/Walls"]
+transform = Transform( -1, 0, -3.25841e-07, 0, 1, 0, 3.25841e-07, 0, -1, 0, 0, 0 )
+
+[node name="Wall" parent="Assets/Room/Walls/Wall3" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.5, 0, 0 )
+
+[node name="Wall2" parent="Assets/Room/Walls/Wall3" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.5, 0, 3 )
+
+[node name="Wall3" parent="Assets/Room/Walls/Wall3" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.5, 0, 6 )
+
+[node name="Wall4" parent="Assets/Room/Walls/Wall3" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.5, 0, -3 )
+
+[node name="Wall5" parent="Assets/Room/Walls/Wall3" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.5, 0, -6 )
+
+[node name="Wall4" type="Spatial" parent="Assets/Room/Walls"]
+transform = Transform( 1.19249e-08, 0, -1, 0, 1, 0, 1, 0, 1.19249e-08, 0, 0, 0 )
+
+[node name="Wall" parent="Assets/Room/Walls/Wall4" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.5, 0, 0 )
+
+[node name="Wall2" parent="Assets/Room/Walls/Wall4" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.5, 0, 3 )
+
+[node name="Wall3" parent="Assets/Room/Walls/Wall4" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.5, 0, 6 )
+
+[node name="Wall4" parent="Assets/Room/Walls/Wall4" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.5, 0, -3 )
+
+[node name="Wall5" parent="Assets/Room/Walls/Wall4" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.5, 0, -6 )
+
+[node name="Room2" type="Spatial" parent="Assets"]
+transform = Transform( -1, 0, -3.25841e-07, 0, 1, 0, 3.25841e-07, 0, -1, 0, -0.01, 24.4107 )
+
+[node name="Floor" parent="Assets/Room2" instance=ExtResource( 3 )]
+
+[node name="Walls" type="Spatial" parent="Assets/Room2"]
+
+[node name="Wall1" type="Spatial" parent="Assets/Room2/Walls"]
+
+[node name="Wall" parent="Assets/Room2/Walls/Wall1" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.5, 0, 0 )
+
+[node name="Wall2" parent="Assets/Room2/Walls/Wall1" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.5, 0, 3 )
+
+[node name="Wall3" parent="Assets/Room2/Walls/Wall1" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.5, 0, 6 )
+
+[node name="Wall4" parent="Assets/Room2/Walls/Wall1" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.5, 0, -3 )
+
+[node name="Wall5" parent="Assets/Room2/Walls/Wall1" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.5, 0, -6 )
+
+[node name="Wall2" type="Spatial" parent="Assets/Room2/Walls"]
+transform = Transform( -1.62921e-07, 0, 1, 0, 1, 0, -1, 0, -1.62921e-07, 0, 0, 0 )
+
+[node name="Wall2" parent="Assets/Room2/Walls/Wall2" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.5, 0, 3 )
+
+[node name="Wall3" parent="Assets/Room2/Walls/Wall2" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.5, 0, 6 )
+
+[node name="Wall4" parent="Assets/Room2/Walls/Wall2" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.5, 0, -3 )
+
+[node name="Wall5" parent="Assets/Room2/Walls/Wall2" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.5, 0, -6 )
+
+[node name="Wall3" type="Spatial" parent="Assets/Room2/Walls"]
+transform = Transform( -1, 0, -3.25841e-07, 0, 1, 0, 3.25841e-07, 0, -1, 0, 0, 0 )
+
+[node name="Wall" parent="Assets/Room2/Walls/Wall3" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.5, 0, 0 )
+
+[node name="Wall2" parent="Assets/Room2/Walls/Wall3" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.5, 0, 3 )
+
+[node name="Wall3" parent="Assets/Room2/Walls/Wall3" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.5, 0, 6 )
+
+[node name="Wall4" parent="Assets/Room2/Walls/Wall3" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.5, 0, -3 )
+
+[node name="Wall5" parent="Assets/Room2/Walls/Wall3" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.5, 0, -6 )
+
+[node name="Wall4" type="Spatial" parent="Assets/Room2/Walls"]
+transform = Transform( 1.19249e-08, 0, -1, 0, 1, 0, 1, 0, 1.19249e-08, 0, 0, 0 )
+
+[node name="Wall" parent="Assets/Room2/Walls/Wall4" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.5, 0, 0 )
+
+[node name="Wall2" parent="Assets/Room2/Walls/Wall4" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.5, 0, 3 )
+
+[node name="Wall3" parent="Assets/Room2/Walls/Wall4" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.5, 0, 6 )
+
+[node name="Wall4" parent="Assets/Room2/Walls/Wall4" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.5, 0, -3 )
+
+[node name="Wall5" parent="Assets/Room2/Walls/Wall4" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.5, 0, -6 )
+
+[node name="Hallway" type="Spatial" parent="Assets"]
+
+[node name="Floor2" parent="Assets/Hallway" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 0.9, 0, -0.01, 12.2337 )
+
+[node name="Wall5" type="Spatial" parent="Assets/Hallway"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.14538, -0.01, 14.0083 )
+
+[node name="Wall" parent="Assets/Hallway/Wall5" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.5, 0, 0 )
+
+[node name="Wall2" parent="Assets/Hallway/Wall5" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.5, 0, 3 )
+
+[node name="Wall4" parent="Assets/Hallway/Wall5" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.5, 0, -3 )
+
+[node name="Wall5" parent="Assets/Hallway/Wall5" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.5, 0, -6 )
+
+[node name="Wall6" type="Spatial" parent="Assets/Hallway"]
+transform = Transform( -1, 0, -3.25841e-07, 0, 1, 0, 3.25841e-07, 0, -1, -3.90604, -0.01, 14.008 )
+
+[node name="Wall" parent="Assets/Hallway/Wall6" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.5, 0, 0 )
+
+[node name="Wall2" parent="Assets/Hallway/Wall6" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.5, 0, 3 )
+
+[node name="Wall3" parent="Assets/Hallway/Wall6" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.5, 0, 6 )
+
+[node name="Wall4" parent="Assets/Hallway/Wall6" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.5, 0, -3 )

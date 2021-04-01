@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://fonts/Bookman Old Style Regular.ttf" type="DynamicFontData" id=1]
 
 [sub_resource type="DynamicFont" id=1]
-outline_color = Color( 0, 0, 0, 1 )
+size = 26
+outline_size = 1
 font_data = ExtResource( 1 )
 
 [sub_resource type="QuadMesh" id=2]
@@ -18,6 +19,38 @@ flags_unshaded = true
 flags_albedo_tex_force_srgb = true
 albedo_texture = SubResource( 3 )
 
+[sub_resource type="Animation" id=5]
+resource_name = "fadeIn"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath("Viewport/Control/Label:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0.1, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=6]
+resource_name = "fadeOut"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath("Viewport/Control/Label:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+
 [node name="TextDisplay" type="Spatial"]
 
 [node name="Viewport" type="Viewport" parent="."]
@@ -31,15 +64,15 @@ margin_right = 640.0
 margin_bottom = 640.0
 
 [node name="Label" type="Label" parent="Viewport/Control"]
-margin_top = 4.0
-margin_right = 132.0
-margin_bottom = 35.0
+modulate = Color( 1, 1, 1, 0 )
+margin_right = 200.0
+margin_bottom = 522.0
 custom_fonts/font = SubResource( 1 )
-custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
-text = "The color is repellant, almost revolting ; a smouldering unclean yellow,
-strangely faded by the slow-turning sunlight. 
+custom_constants/shadow_offset_x = 0
+custom_constants/shadow_offset_y = 0
+text = "strangely faded by the slow-turning sunlight.
 "
 autowrap = true
 
@@ -47,3 +80,7 @@ autowrap = true
 transform = Transform( 4, 0, 0, 0, 4, 0, 0, 0, 1, 0, 0, 0 )
 mesh = SubResource( 2 )
 material/0 = SubResource( 4 )
+
+[node name="anim" type="AnimationPlayer" parent="."]
+anims/fadeIn = SubResource( 5 )
+anims/fadeOut = SubResource( 6 )
