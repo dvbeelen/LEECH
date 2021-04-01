@@ -24,7 +24,7 @@ shadow_color = Color( 1, 1, 1, 1 )
 transform = Transform( -1, 0, 3.25841e-07, 0, 1, 0, -3.25841e-07, 0, -1, -4.37868, 2.69491, 6.43953 )
 
 [node name="TextDisplay2" parent="Texts" instance=ExtResource( 5 )]
-transform = Transform( -1.62921e-07, 0, -1, 0, 1, 0, 1, 0, -1.62921e-07, 2.17587, 2.69491, 15.9983 )
+transform = Transform( -1, -3.25841e-07, -5.30863e-14, 0, -1.62921e-07, 1, -3.25841e-07, 1, 1.62921e-07, 0.0807467, 0.221691, 9.91272 )
 
 [node name="TextDisplay3" parent="Texts" instance=ExtResource( 5 )]
 transform = Transform( -1, 0, -3.25841e-07, 0, 1, 0, 3.25841e-07, 0, -1, -0.331631, 2.69491, 30.8146 )
@@ -35,7 +35,7 @@ transform = Transform( -1, 0, -3.25841e-07, 0, 1, 0, 3.25841e-07, 0, -1, -0.3316
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.164032, 2.02949, 2.39116 )
 
 [node name="TextTrigger2" parent="Triggers" instance=ExtResource( 2 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.164032, 2.02949, 11.6544 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.164032, 2.02949, 6.87537 )
 
 [node name="TextTrigger3" parent="Triggers" instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.164032, 2.02949, 23.7048 )
