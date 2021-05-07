@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://TextTrigger/TextTrigger.tscn" type="PackedScene" id=2]
@@ -6,12 +6,13 @@
 [ext_resource path="res://Assets/Wall.tscn" type="PackedScene" id=4]
 [ext_resource path="res://TextTrigger/TextDisplay.tscn" type="PackedScene" id=5]
 [ext_resource path="res://TestScene.gd" type="Script" id=6]
+[ext_resource path="res://BookImport/BookImport.gd" type="Script" id=7]
 
 [node name="TestScene" type="Spatial"]
 script = ExtResource( 6 )
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
+transform = Transform( -1, 0, -3.25841e-07, 0, 1, 0, 3.25841e-07, 0, -1, 0, 0, 0 )
 
 [node name="DirectionalLight" type="DirectionalLight" parent="."]
 transform = Transform( 1, 0, 0, 0, 1.19249e-08, 1, 0, -1, 1.19249e-08, 0, 6.11859, 0.205259 )
@@ -38,7 +39,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.164032, 2.02949, 2.39116 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.164032, 2.02949, 6.87537 )
 
 [node name="TextTrigger3" parent="Triggers" instance=ExtResource( 2 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.164032, 2.02949, 23.7048 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.164032, 2.02949, 21.8014 )
 
 [node name="Assets" type="Spatial" parent="."]
 
@@ -46,6 +47,10 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.164032, 2.02949, 23.7048 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.01, 0 )
 
 [node name="Floor" parent="Assets/Room" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00429678, 0.0316992, 0.0193009 )
+
+[node name="Floor2" parent="Assets/Room" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00429678, 0.0316992, 0.0193009 )
 
 [node name="Walls" type="Spatial" parent="Assets/Room"]
 
@@ -70,16 +75,16 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.5, 0, -6 )
 transform = Transform( -1.62921e-07, 0, 1, 0, 1, 0, -1, 0, -1.62921e-07, 0, 0, 0 )
 
 [node name="Wall2" parent="Assets/Room/Walls/Wall2" instance=ExtResource( 4 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.5, 0, 3 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.5, 0, 3.94285 )
 
 [node name="Wall3" parent="Assets/Room/Walls/Wall2" instance=ExtResource( 4 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.5, 0, 6 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.5, 0, 6.94285 )
 
 [node name="Wall4" parent="Assets/Room/Walls/Wall2" instance=ExtResource( 4 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.5, 0, -3 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.5, 0, -3.72341 )
 
 [node name="Wall5" parent="Assets/Room/Walls/Wall2" instance=ExtResource( 4 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.5, 0, -6 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.5, 0, -6.72341 )
 
 [node name="Wall3" type="Spatial" parent="Assets/Room/Walls"]
 transform = Transform( -1, 0, -3.25841e-07, 0, 1, 0, 3.25841e-07, 0, -1, 0, 0, 0 )
@@ -195,7 +200,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.5, 0, -6 )
 [node name="Hallway" type="Spatial" parent="Assets"]
 
 [node name="Floor2" parent="Assets/Hallway" instance=ExtResource( 3 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 0.9, 0, -0.01, 12.2337 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 0.9, 0, -0.161347, 12.2337 )
 
 [node name="Wall5" type="Spatial" parent="Assets/Hallway"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.14538, -0.01, 14.0083 )
@@ -226,3 +231,6 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.5, 0, 6 )
 
 [node name="Wall4" parent="Assets/Hallway/Wall6" instance=ExtResource( 4 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.5, 0, -3 )
+
+[node name="TextSpawner" type="Node2D" parent="."]
+script = ExtResource( 7 )
