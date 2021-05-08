@@ -11,6 +11,10 @@
 [node name="TestScene" type="Spatial"]
 script = ExtResource( 6 )
 
+[node name="TextSpawner" type="Spatial" parent="."]
+transform = Transform( -0.775881, 0, -0.630879, 0, 1, 0, 0.630879, 0, -0.775881, 0, 6.0532, 5.15616 )
+script = ExtResource( 7 )
+
 [node name="Player" parent="." instance=ExtResource( 1 )]
 transform = Transform( -1, 0, -3.25841e-07, 0, 1, 0, 3.25841e-07, 0, -1, 0, 0, 0 )
 
@@ -231,6 +235,3 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.5, 0, 6 )
 
 [node name="Wall4" parent="Assets/Hallway/Wall6" instance=ExtResource( 4 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.5, 0, -3 )
-
-[node name="TextSpawner" type="Node2D" parent="."]
-script = ExtResource( 7 )

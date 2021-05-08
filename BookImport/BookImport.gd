@@ -19,6 +19,8 @@ func _ready():
 		generateEnvironmentalSubtitles(data)
 
 func generateEnvironmentalSubtitles(data):
+	var PlayerPos = get_parent().get_node("Player").translation
+	print(PlayerPos)
 	var keys = data.text.keys()
 	var lines = data.text.values()
 	for i in data.text.size():
