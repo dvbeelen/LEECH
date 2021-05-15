@@ -25,6 +25,9 @@ func _process(delta):
 	if Input.is_action_just_pressed("escape"):
 		get_tree().quit()
 	
+	if Input.is_action_just_pressed("space"):
+		get_node("camera/CanvasLayer/Panel").modulate = Color(0,1,0)
+		get_node("camera/CanvasLayer/Panel").modulate.a = 0.5
 #	Move Camera based on mouse movement
 	camera.rotation_degrees.x -= mouseDelta.y * lookSensitivity * delta
 	camera.rotation_degrees.x = clamp(camera.rotation_degrees.x, minLookAngle, maxLookAngle)

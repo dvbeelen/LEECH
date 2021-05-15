@@ -18,4 +18,15 @@ shape = SubResource( 1 )
 
 [node name="camera" type="Camera" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.5, 0 )
+cull_mask = 2148532223
 current = true
+
+[node name="CanvasLayer" type="CanvasLayer" parent="camera"]
+
+[node name="Panel" type="Panel" parent="camera/CanvasLayer"]
+modulate = Color( 1, 0, 0, 0.443137 )
+margin_right = 1022.0
+margin_bottom = 600.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
