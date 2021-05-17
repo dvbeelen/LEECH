@@ -2,10 +2,10 @@ extends RigidBody
 
 onready var col = $CollisionShape
 
-export var frame = 1
+export var frame = ""
 
 func _process(delta):
-	if Global.red_frame == true:
+	if frame == Global.current_frame:
 		self.visible = false
 		col.disabled = true
 	else:

@@ -23,7 +23,7 @@ shadow_color = Color( 1, 1, 1, 1 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.01, 0 )
 
 [node name="Floor" parent="Assets/Room" instance=ExtResource( 3 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00429678, 0.0316992, 0.0193009 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00429678, 5.89237, 0.0193009 )
 
 [node name="Floor2" parent="Assets/Room" instance=ExtResource( 3 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00429678, 0.0316992, 0.0193009 )
@@ -31,9 +31,6 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00429678, 0.0316992, 0.0193
 [node name="Walls" type="Spatial" parent="Assets/Room"]
 
 [node name="Wall1" type="Spatial" parent="Assets/Room/Walls"]
-
-[node name="Wall" parent="Assets/Room/Walls/Wall1" instance=ExtResource( 4 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.5, 0, 0 )
 
 [node name="Wall2" parent="Assets/Room/Walls/Wall1" instance=ExtResource( 4 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.5, 0, 3 )
@@ -49,9 +46,6 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.5, 0, -6 )
 
 [node name="Wall3" type="Spatial" parent="Assets/Room/Walls"]
 transform = Transform( -1, 0, -3.25841e-07, 0, 1, 0, 3.25841e-07, 0, -1, 0, 0, 0 )
-
-[node name="Wall" parent="Assets/Room/Walls/Wall3" instance=ExtResource( 4 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.5, 0, 0 )
 
 [node name="Wall2" parent="Assets/Room/Walls/Wall3" instance=ExtResource( 4 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.5, 0, 3 )
@@ -102,3 +96,12 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.5, 0, -6 )
 
 [node name="Dissapearing_Wall" parent="Assets/Obstacles" instance=ExtResource( 2 )]
 transform = Transform( -1.62921e-07, 0, 1, 0, 1, 0, -1, 0, -1.62921e-07, 0, 0, 6.22951 )
+frame = "blue"
+
+[node name="Dissapearing_Wall2" parent="Assets/Obstacles" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.54246, -0.0343647, 0 )
+frame = "green"
+
+[node name="Dissapearing_Wall3" parent="Assets/Obstacles" instance=ExtResource( 2 )]
+transform = Transform( -1, 0, -3.25841e-07, 0, 1, 0, 3.25841e-07, 0, -1, 6.42773, 0, 0 )
+frame = "red"

@@ -93,6 +93,7 @@ func change_frame(frame_number):
 			if !Global.red_frame:
 				reset_frame(1)
 			else:
+				Global.current_frame = "red"
 				color_frame(Color(1,0,0))
 		2: 
 			Global.green_frame = not Global.green_frame
@@ -101,6 +102,7 @@ func change_frame(frame_number):
 			if !Global.green_frame:
 				reset_frame(2)
 			else:
+				Global.current_frame = "green"
 				color_frame(Color(0,1,0))
 		3: 
 			Global.blue_frame = not Global.blue_frame
@@ -109,11 +111,13 @@ func change_frame(frame_number):
 			if !Global.blue_frame:
 				reset_frame(3)
 			else:
+				Global.current_frame = "blue"
 				color_frame(Color(0,0,1))
 
 func reset_frame(frame_to_reset):
 	frame.modulate = Color(1,1,1)
 	frame.modulate.a = 0
+	Global.current_frame = ""
 	match frame_to_reset:
 		1:
 			Global.red_frame = false
