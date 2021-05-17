@@ -24,7 +24,7 @@ current = true
 [node name="CanvasLayer" type="CanvasLayer" parent="camera"]
 
 [node name="Panel" type="Panel" parent="camera/CanvasLayer"]
-modulate = Color( 1, 0, 0, 0.443137 )
+modulate = Color( 0, 0, 0, 0.00392157 )
 margin_right = 1022.0
 margin_bottom = 600.0
 __meta__ = {

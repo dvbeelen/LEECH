@@ -2,6 +2,7 @@ extends KinematicBody
 
 #Components
 onready var camera = $camera
+onready var frame = $camera/CanvasLayer/Panel
 
 #Physics
 var moveSpeed: float = 5.0
@@ -25,9 +26,13 @@ func _process(delta):
 	if Input.is_action_just_pressed("escape"):
 		get_tree().quit()
 	
-	if Input.is_action_just_pressed("space"):
-		get_node("camera/CanvasLayer/Panel").modulate = Color(0,1,0)
-		get_node("camera/CanvasLayer/Panel").modulate.a = 0.5
+	if Input.is_action_just_pressed("frame_1"):
+		change_frame(1)
+	if Input.is_action_just_pressed("frame_2"):
+		change_frame(2)
+	if Input.is_action_just_pressed("frame_3"):
+		change_frame(3)
+	
 #	Move Camera based on mouse movement
 	camera.rotation_degrees.x -= mouseDelta.y * lookSensitivity * delta
 	camera.rotation_degrees.x = clamp(camera.rotation_degrees.x, minLookAngle, maxLookAngle)
@@ -78,3 +83,32 @@ func _physics_process(delta):
 	
 #	Move the player
 	velocity = move_and_slide(velocity, Vector3.UP)
+
+func change_frame(frame_number):
+	match frame_number:
+		1:
+			Global.red_frame = not Global.red_frame
+			if !Global.red_frame:
+				reset_frame()
+			else:
+				color_frame(Color(1,0,0))
+		2: 
+			Global.green_frame = not Global.green_frame
+			if !Global.green_frame:
+				reset_frame()
+			else:
+				color_frame(Color(0,1,0))
+		3: 
+			Global.blue_frame = not Global.blue_frame
+			if !Global.blue_frame:
+				reset_frame()
+			else:
+				color_frame(Color(0,0,1))
+
+func reset_frame():
+	frame.modulate = Color(1,1,1)
+	frame.modulate.a = 0
+
+func color_frame(color):
+	frame.modulate = color
+	frame.modulate.a = 0.5
