@@ -22,10 +22,10 @@ shadow_color = Color( 1, 1, 1, 1 )
 [node name="Room" type="Spatial" parent="Assets"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.01, 0 )
 
-[node name="Floor" parent="Assets/Room" instance=ExtResource( 3 )]
+[node name="Ceiling" parent="Assets/Room" instance=ExtResource( 3 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00429678, 5.89237, 0.0193009 )
 
-[node name="Floor2" parent="Assets/Room" instance=ExtResource( 3 )]
+[node name="Floor" parent="Assets/Room" instance=ExtResource( 3 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00429678, 0.0316992, 0.0193009 )
 
 [node name="Walls" type="Spatial" parent="Assets/Room"]
@@ -103,5 +103,5 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.54246, -0.0343647, 0 )
 frame = "green"
 
 [node name="Dissapearing_Wall3" parent="Assets/Obstacles" instance=ExtResource( 2 )]
-transform = Transform( -1, 0, -3.25841e-07, 0, 1, 0, 3.25841e-07, 0, -1, 6.42773, 0, 0 )
+transform = Transform( -1, 0, -3.25841e-07, 0, 1, 0, 3.25841e-07, 0, -1, 6.5002, -0.000322819, 0 )
 frame = "red"
