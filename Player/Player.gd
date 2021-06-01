@@ -88,6 +88,7 @@ func change_frame(frame_number):
 	match frame_number:
 		1:
 			Global.red_frame = not Global.red_frame
+			get_tree().get_current_scene().get_node("SubGenerator").change_story_to_show('frame1', true)
 			Global.green_frame = false
 			Global.blue_frame = false
 			if !Global.red_frame:
@@ -97,6 +98,7 @@ func change_frame(frame_number):
 				color_frame(Color(1,0,0))
 		2: 
 			Global.green_frame = not Global.green_frame
+			get_tree().get_current_scene().get_node("SubGenerator").change_story_to_show('frame2', true)
 			Global.red_frame = false
 			Global.blue_frame = false
 			if !Global.green_frame:
@@ -106,6 +108,7 @@ func change_frame(frame_number):
 				color_frame(Color(0,1,0))
 		3: 
 			Global.blue_frame = not Global.blue_frame
+			get_tree().get_current_scene().get_node("SubGenerator").change_story_to_show('frame3', true)
 			Global.green_frame = false
 			Global.red_frame = false
 			if !Global.blue_frame:
@@ -118,6 +121,7 @@ func reset_frame(frame_to_reset):
 	frame.modulate = Color(1,1,1)
 	frame.modulate.a = 0
 	Global.current_frame = ""
+	get_tree().get_current_scene().get_node("SubGenerator").change_story_to_show('noFrame', true)
 	match frame_to_reset:
 		1:
 			Global.red_frame = false

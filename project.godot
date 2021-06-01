@@ -21,6 +21,11 @@ run/main_scene="res://TestScene.tscn"
 [autoload]
 
 Global="*res://Global.gd"
+SubManager="*res://addons/writing_on_the_wall/managers/sub_manager.gd"
+
+[editor_plugins]
+
+enabled=PoolStringArray( "writing_on_the_wall" )
 
 [input]
 
