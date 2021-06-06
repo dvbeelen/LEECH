@@ -1,2 +1,2 @@
-# BookWorlds
- Book -> Game. Project for PLE
+# LEECH
+Game project for the FMH exposition and MediaLab 2
