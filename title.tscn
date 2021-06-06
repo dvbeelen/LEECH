@@ -1,0 +1,74 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Logo.png" type="Texture" id=1]
+[ext_resource path="res://fonts/5Computers-In-Love.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://shader/crt_material.tres" type="Material" id=3]
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0.0627451, 0.0980392, 0.0666667, 1 )
+
+[sub_resource type="DynamicFont" id=2]
+font_data = ExtResource( 2 )
+
+[node name="Title" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CRT-Shader" type="CanvasLayer" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="CRT-Shader"]
+material = ExtResource( 3 )
+margin_right = 1024.0
+margin_bottom = 600.0
+rect_min_size = Vector2( 1024, 600 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BG" type="Panel" parent="."]
+margin_right = 1024.0
+margin_bottom = 600.0
+custom_styles/panel = SubResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Container" type="VBoxContainer" parent="."]
+margin_left = 206.0
+margin_right = 782.0
+margin_bottom = 600.0
+custom_constants/separation = 32
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Logo" type="TextureRect" parent="Container"]
+margin_top = 144.0
+margin_right = 576.0
+margin_bottom = 336.0
+texture = ExtResource( 1 )
+stretch_mode = 6
+
+[node name="Button" type="Button" parent="Container"]
+margin_top = 368.0
+margin_right = 576.0
+margin_bottom = 396.0
+rect_min_size = Vector2( 300, 0 )
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 0.00392157, 0.427451, 0.231373, 1 )
+text = "Start game"
+flat = true
+
+[node name="Button2" type="Button" parent="Container"]
+margin_top = 428.0
+margin_right = 576.0
+margin_bottom = 456.0
+rect_min_size = Vector2( 300, 0 )
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 0.00392157, 0.427451, 0.231373, 1 )
+text = "Exit"
+flat = true

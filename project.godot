@@ -15,7 +15,8 @@ _global_script_class_icons={
 
 [application]
 
-config/name="Empathy Box"
+config/name="L.E.E.C.H"
+config/description="A game made for FMH exposition and MediaLab 2"
 run/main_scene="res://TestScene.tscn"
 
 [autoload]
