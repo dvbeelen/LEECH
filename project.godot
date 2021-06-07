@@ -17,7 +17,7 @@ _global_script_class_icons={
 
 config/name="L.E.E.C.H"
 config/description="A game made for FMH exposition and MediaLab 2"
-run/main_scene="res://TestScene.tscn"
+run/main_scene="res://title/title.tscn"
 
 [autoload]
 

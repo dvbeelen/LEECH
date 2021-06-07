@@ -6,3 +6,4 @@ func _on_exit_pressed():
 
 func _on_start_pressed():
 	print("Starting the game...")
+	Global.gotoScene("res://leechat/ChatRoom.tscn")
