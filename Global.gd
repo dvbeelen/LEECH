@@ -9,6 +9,7 @@ var blue_frame: bool = false
 
 #Player information
 var playerName = "Player 1"
+var playerColor = ''
 var roomName = "1"
 
 var root
