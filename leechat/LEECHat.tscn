@@ -1,0 +1,82 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://leechat/LEECHat.gd" type="Script" id=1]
+[ext_resource path="res://fonts/5Computers-In-Love.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://shader/crt_material.tres" type="Material" id=3]
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0.0627451, 0.0980392, 0.0666667, 1 )
+
+[sub_resource type="DynamicFont" id=2]
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=5]
+font_data = ExtResource( 2 )
+
+[sub_resource type="StyleBoxEmpty" id=6]
+
+[sub_resource type="StyleBoxEmpty" id=3]
+
+[sub_resource type="DynamicFont" id=4]
+font_data = ExtResource( 2 )
+
+[node name="LEECHat" type="Control"]
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel" type="Panel" parent="."]
+margin_right = 1024.0
+margin_bottom = 600.0
+custom_styles/panel = SubResource( 1 )
+
+[node name="boxContainer" type="VBoxContainer" parent="."]
+margin_left = 80.0
+margin_top = 40.0
+margin_right = 944.0
+margin_bottom = 600.0
+rect_min_size = Vector2( 864, 560 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="chatLog" type="RichTextLabel" parent="boxContainer"]
+margin_right = 864.0
+margin_bottom = 23.0
+custom_fonts/normal_font = SubResource( 2 )
+bbcode_enabled = true
+fit_content_height = true
+scroll_following = true
+
+[node name="HBoxContainer" type="HBoxContainer" parent="boxContainer"]
+margin_top = 27.0
+margin_right = 864.0
+margin_bottom = 49.0
+
+[node name="Label" type="Label" parent="boxContainer/HBoxContainer"]
+margin_bottom = 22.0
+custom_fonts/font = SubResource( 5 )
+custom_colors/font_color = Color( 0.00392157, 0.427451, 0.231373, 1 )
+
+[node name="writeLine" type="LineEdit" parent="boxContainer/HBoxContainer"]
+margin_left = 4.0
+margin_right = 172.0
+margin_bottom = 22.0
+custom_styles/focus = SubResource( 6 )
+custom_styles/normal = SubResource( 3 )
+custom_fonts/font = SubResource( 4 )
+custom_colors/cursor_color = Color( 0.00392157, 0.427451, 0.231373, 1 )
+custom_colors/font_color = Color( 0.00392157, 0.427451, 0.231373, 1 )
+max_length = 30
+caret_blink = true
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+material = ExtResource( 3 )
+margin_right = 1024.0
+margin_bottom = 600.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
