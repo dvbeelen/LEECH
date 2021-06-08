@@ -28,25 +28,31 @@ func _process(_delta):
 		writeLine.clear()
 
 func chatLogPrint(username, text):
+#	Setting playername for the first time
 	if !playerNameSet && Global.playerName == 'Player 1':
 		print('setting player name')
 		Global.playerName = text
 		nameLabel = Global.playerName
 		chatLog.text = "LEECH so your name is " + Global.playerName + "? Yes or No?"
 		return
+#	Confirming with player that given name is okay
 	if !playerNameSet && Global.playerName != 'Player 1':
 		print('confirming player name')
+#		Name is okay, moving to colors
 		if text == 'yes':
 			playerNameSet = true
 			chatLog.text = "LEECH: Name set to: " + Global.playerName 
 			yield(get_tree().create_timer(2.5), 'timeout')
 			chatLog.text = "LEECH: Next, can you type in your favorite color please..."
 			return
+#		Name is not okay, asking again
 		else:
 			Global.playerName = 'Player 1'
 			chatLog.text = "LEECH: Please type in your name"
 			return
+#	Asking the player for their favorite color, to set the text with
 	if playerNameSet && !playerColorSet:
+#		If given color is known, set the color and start the game
 		if text in availableColors:
 			print('setting player color')
 			chatLog.text = "LEECH: Favorite color set to " + text + " . Please wait..."
@@ -57,6 +63,7 @@ func chatLogPrint(username, text):
 			chatLog.text = "LEECH: Starting the game... "
 			yield(get_tree().create_timer(2.5), 'timeout')
 			Global.gotoScene("res://leechat/LEECHat.tscn")
+#		If color not in available colors, ask player to pick another one
 		else:
 			print('confirming player color')
 			chatLog.text = "LEECH: Color " + text+ " not found. try another one please "

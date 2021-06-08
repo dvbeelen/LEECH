@@ -11,6 +11,7 @@ var blue_frame: bool = false
 var playerName = "Player 1"
 var playerColor = ''
 var roomName = "1"
+var maxCharactersForChat = 70
 
 var root
 var scene

@@ -43,16 +43,16 @@ __meta__ = {
 
 [node name="chatLog" type="RichTextLabel" parent="boxContainer"]
 margin_right = 864.0
-margin_bottom = 23.0
+margin_bottom = 500.0
+rect_min_size = Vector2( 864, 500 )
 custom_fonts/normal_font = SubResource( 2 )
 bbcode_enabled = true
-fit_content_height = true
 scroll_following = true
 
 [node name="HBoxContainer" type="HBoxContainer" parent="boxContainer"]
-margin_top = 27.0
+margin_top = 504.0
 margin_right = 864.0
-margin_bottom = 49.0
+margin_bottom = 526.0
 
 [node name="Label" type="Label" parent="boxContainer/HBoxContainer"]
 margin_bottom = 22.0

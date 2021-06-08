@@ -5,10 +5,14 @@ export var url = "ws://localhost:8080/"
 var client = WebSocketClient.new()
 onready var chatLog = $boxContainer/chatLog
 onready var writeLine = $boxContainer/HBoxContainer/writeLine
-onready var nameLabel = $boxContainer/HBoxContainer/Label
+onready var nameLabel = $boxContainer/HBoxContainer/playerName
+onready var characterCount = $boxContainer/HBoxContainer/characterCount
+var enteredTextSize = 0
 
 func _ready():
-	nameLabel.text = "[" + Global.playerName + "]"
+	chatLog.get_child(0).rect_scale.x = 0
+	characterCount.text = String(Global.maxCharactersForChat)
+	writeLine.max_length = Global.maxCharactersForChat
 	writeLine.grab_focus()
 	client.connect("connection_closed", self, "closeConn")
 	client.connect("connection_error", self, "errConn")
@@ -48,6 +52,7 @@ func onData():
 
 func send(payload):
 	client.get_peer(1).put_packet(JSON.print(payload).to_utf8())
+	characterCount.text = String(Global.maxCharactersForChat)
 
 func chatLogPrint(username, text):
 	var textcolor = Global.playerColor
@@ -59,3 +64,9 @@ func chatLogPrint(username, text):
 		chatLog.bbcode_text += '[' + username + ']: '
 	chatLog.bbcode_text += text
 	chatLog.bbcode_text += '[/color]'
+
+
+func _on_writeLine_text_changed(new_text):
+	var charLeft = int(characterCount.text)
+	charLeft -= 1
+	characterCount.text = String(charLeft)
