@@ -59,7 +59,7 @@ func send(payload):
 	client.get_peer(1).put_packet(JSON.print(payload).to_utf8())
 
 func chatLogPrint(username, text):
-	var textcolor = "#ffffff"
+	var textcolor = Global.playerColor
 	if username != Global.playerName:
 		textcolor = "#016d3b"
 	chatLog.bbcode_text += '\n \n'

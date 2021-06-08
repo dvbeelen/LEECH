@@ -8,6 +8,16 @@ var playerNameSet = false
 var playerColorSet = false
 
 var availableColors = ["red", "blue", "green", "yellow", "purple", "pink", "brown", "white"]
+var colorCodes = {
+	"red": "#B20000",
+	"blue": "#0BB5FF",
+	"green": "#00b300",
+	"yellow": "#FFFF00",
+	"purple": "#800080",
+	"pink": "#FF69B4",
+	"brown": "#964B00",
+	"white": "#ffffff",
+}
 func _ready():
 	chatLog.text = "LEECH: Hello! I am LEECH! To talk to your co-player, I will need your name please..."
 	writeLine.grab_focus()
@@ -38,7 +48,8 @@ func chatLogPrint(username, text):
 		if text in availableColors:
 			print('setting player color')
 			chatLog.text = "LEECH: Favorite color set to " + text + " . Please wait..."
-			Global.playerColor = text
+			Global.playerColor = colorCodes[text]
+			print(Global.playerColor)
 			playerColorSet = true
 			yield(get_tree().create_timer(2), 'timeout')
 			chatLog.text = "LEECH: Starting the game... "
