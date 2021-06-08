@@ -15,7 +15,7 @@ var colorCodes = {
 	"yellow": "#FFFF00",
 	"purple": "#800080",
 	"pink": "#FF69B4",
-	"brown": "#964B00",
+	"brown": "#523A28",
 	"white": "#ffffff",
 }
 func _ready():
@@ -32,17 +32,19 @@ func chatLogPrint(username, text):
 		print('setting player name')
 		Global.playerName = text
 		nameLabel = Global.playerName
-		chatLog.text = "LEECH confirming your name is " + Global.playerName
+		chatLog.text = "LEECH so your name is " + Global.playerName + "? Yes or No?"
 		return
 	if !playerNameSet && Global.playerName != 'Player 1':
 		print('confirming player name')
 		if text == 'yes':
 			playerNameSet = true
-			chatLog.text = "LEECH: Name confirmed." + Global.playerName + ", What is your favorite color? "
+			chatLog.text = "LEECH: Name set to: " + Global.playerName 
+			yield(get_tree().create_timer(2.5), 'timeout')
+			chatLog.text = "LEECH: Next, can you type in your favorite color please..."
 			return
 		else:
 			Global.playerName = 'Player 1'
-			chatLog.text = "LEECH: Name not confirmed. Please reset your name "
+			chatLog.text = "LEECH: Please type in your name"
 			return
 	if playerNameSet && !playerColorSet:
 		if text in availableColors:
@@ -51,16 +53,16 @@ func chatLogPrint(username, text):
 			Global.playerColor = colorCodes[text]
 			print(Global.playerColor)
 			playerColorSet = true
-			yield(get_tree().create_timer(2), 'timeout')
+			yield(get_tree().create_timer(2.5), 'timeout')
 			chatLog.text = "LEECH: Starting the game... "
-			yield(get_tree().create_timer(2), 'timeout')
+			yield(get_tree().create_timer(2.5), 'timeout')
 			Global.gotoScene("res://leechat/LEECHat.tscn")
 		else:
 			print('confirming player color')
 			chatLog.text = "LEECH: Color " + text+ " not found. try another one please "
 			return
 	if playerNameSet && playerColorSet:
-		yield(get_tree().create_timer(1), 'timeout')
+		yield(get_tree().create_timer(2.5), 'timeout')
 	else:
 		var textcolor = "#ffffff"
 		if username != Global.playerName:

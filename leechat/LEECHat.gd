@@ -22,14 +22,6 @@ func _ready():
 
 func _process(_delta):
 	client.poll()
-	
-	if Input.is_action_just_pressed("frame_1"):
-		var nPayload = {
-			"method": "chat",
-			"username": Global.playerName,
-			"message": "Greetings and salutation"
-		}
-		send(nPayload)
 	if Input.is_action_just_pressed("enter"):
 		var nPayload = {
 			"method": "chat",
@@ -45,7 +37,6 @@ func closeConn(was_clean = false):
 
 func conn(proto = ""):
 	print("Connected with protocol: " + proto)
-	chatLogPrint("LEECH", "A new player has entered the chat!")
 
 func errConn(err):
 	print(err)
