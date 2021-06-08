@@ -63,9 +63,3 @@ func save_subtitles(data):
 func change_story_to_show(new_story, reset):
 	story_to_show = new_story
 	get_story_to_show()
-	if reset:
-		reset_subtitles()
-
-func reset_subtitles():
-	get_tree().get_current_scene().get_node("DisplayManager").clean()
-	SubManager.current_line = -1
