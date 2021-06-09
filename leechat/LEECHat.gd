@@ -34,6 +34,8 @@ func _process(_delta):
 		}
 		writeLine.clear()
 		send(nPayload)
+	if Input.is_action_just_pressed("escape"):
+		Global.gotoScene("res://TestScene.tscn")
 
 func closeConn(was_clean = false):
 	print("Closed: clean " + String(was_clean))
@@ -64,7 +66,6 @@ func chatLogPrint(username, text):
 		chatLog.bbcode_text += '[' + username + ']: '
 	chatLog.bbcode_text += text
 	chatLog.bbcode_text += '[/color]'
-
 
 func _on_writeLine_text_changed(new_text):
 	var charLeft = int(characterCount.text)

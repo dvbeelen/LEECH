@@ -27,4 +27,5 @@ func _deferred_gotoScene(path):
 	scene.free()
 	var res = ResourceLoader.load(path)
 	scene = res.instance()
+	scene.connect("tree_entered", get_tree(), "set_current_scene", [scene], CONNECT_ONESHOT)
 	root.add_child(scene)
