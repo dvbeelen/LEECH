@@ -28,10 +28,6 @@ shadow_color = Color( 1, 1, 1, 1 )
 [node name="Room" type="Spatial" parent="Assets"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.01, 0 )
 
-[node name="Ceiling" parent="Assets/Room" instance=ExtResource( 5 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00429678, 5.89237, 0.0193009 )
-visible = false
-
 [node name="Doors" type="Spatial" parent="Assets/Room"]
 
 [node name="Door" parent="Assets/Room/Doors" instance=ExtResource( 8 )]
@@ -347,6 +343,27 @@ transform = Transform( 1.17, 0, 0, 0, 1, 0, 0, 0, 1.17, 15, 0, 0 )
 transform = Transform( -1.17, 0, -3.81234e-07, 0, 1, 0, 3.81234e-07, 0, -1.17, -15.0118, 0, 15.0877 )
 
 [node name="Floor6" parent="Assets/Room/Floors" instance=ExtResource( 5 )]
+transform = Transform( 1.17, 0, 0, 0, 1, 0, 0, 0, 1.17, -15.0118, 0, 0 )
+
+[node name="Ceiling" type="Spatial" parent="Assets/Room"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6, 0 )
+
+[node name="Floor" parent="Assets/Room/Ceiling" instance=ExtResource( 5 )]
+transform = Transform( 1.17, 0, 0, 0, 1, 0, 0, 0, 1.17, -0.00429678, 0.0316992, 0.0193009 )
+
+[node name="Floor2" parent="Assets/Room/Ceiling" instance=ExtResource( 5 )]
+transform = Transform( 1.17, 0, 0, 0, 1, 0, 0, 0, 1.17, -0.004, 0.032, 15.1028 )
+
+[node name="Floor3" parent="Assets/Room/Ceiling" instance=ExtResource( 5 )]
+transform = Transform( -1.17, 0, -3.81234e-07, 0, 1, 0, 3.81234e-07, 0, -1.17, 15, 0, 15.0877 )
+
+[node name="Floor4" parent="Assets/Room/Ceiling" instance=ExtResource( 5 )]
+transform = Transform( 1.17, 0, 0, 0, 1, 0, 0, 0, 1.17, 15, 0, 0 )
+
+[node name="Floor5" parent="Assets/Room/Ceiling" instance=ExtResource( 5 )]
+transform = Transform( -1.17, 0, -3.81234e-07, 0, 1, 0, 3.81234e-07, 0, -1.17, -15.0118, 0, 15.0877 )
+
+[node name="Floor6" parent="Assets/Room/Ceiling" instance=ExtResource( 5 )]
 transform = Transform( 1.17, 0, 0, 0, 1, 0, 0, 0, 1.17, -15.0118, 0, 0 )
 
 [node name="Table" parent="Assets" instance=ExtResource( 6 )]
