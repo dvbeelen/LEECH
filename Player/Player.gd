@@ -3,6 +3,7 @@ extends KinematicBody
 #Components
 onready var camera = $camera
 onready var frame = $camera/CanvasLayer/Panel
+onready var cameraText = $camera/CanvasLayer/cameraText
 
 #Physics
 var moveSpeed: float = 5.0
@@ -17,21 +18,18 @@ var lookSensitivity : float = 10.0
 var velocity: Vector3 = Vector3()
 var mouseDelta: Vector2 = Vector2()
 
+#Inner workings
+var playerEnabled = true
+
 #On start, hide the mouse
 func _ready():
+	cameraText.visible = false
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 
 func _process(delta):
 #	Close game if escape is pressed
-	if Input.is_action_just_pressed("escape"):
+	if Input.is_action_just_pressed("escape") && playerEnabled:
 		get_tree().quit()
-	
-	if Input.is_action_just_pressed("frame_1"):
-		change_frame(1)
-	if Input.is_action_just_pressed("frame_2"):
-		change_frame(2)
-	if Input.is_action_just_pressed("frame_3"):
-		change_frame(3)
 	
 #	Move Camera based on mouse movement
 	camera.rotation_degrees.x -= mouseDelta.y * lookSensitivity * delta
@@ -57,15 +55,16 @@ func _physics_process(delta):
 	var input = Vector2()
 	
 #	Movement Inputs
-	if Input.is_action_pressed("move_forward"):
-		input.y -= 1
-	if Input.is_action_pressed("move_backward"):
-		input.y += 1
-	if Input.is_action_pressed("move_left"):
-		input.x -= 1
-	if Input.is_action_pressed("move_right"):
-		input.x += 1
-	
+	if playerEnabled:
+		if Input.is_action_pressed("move_forward"):
+			input.y -= 1
+		if Input.is_action_pressed("move_backward"):
+			input.y += 1
+		if Input.is_action_pressed("move_left"):
+			input.x -= 1
+		if Input.is_action_pressed("move_right"):
+			input.x += 1
+		
 	input = input.normalized()
 	
 #	Get the forward and right directions
@@ -134,3 +133,13 @@ func reset_frame(frame_to_reset):
 func color_frame(color):
 	frame.modulate = color
 	frame.modulate.a = 0.5
+
+func playerStateSwitch():
+	playerEnabled = !playerEnabled
+	cameraText.visible = !cameraText.visible
+
+func showInteractionPrompt():
+	cameraText.visible = true
+
+func hideInteractionPrompt():
+	cameraText.visible = false

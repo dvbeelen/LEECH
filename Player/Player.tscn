@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Player/Player.gd" type="Script" id=1]
+[ext_resource path="res://fonts/mainFont.tres" type="DynamicFont" id=2]
 
 [sub_resource type="CapsuleShape" id=1]
 radius = 0.5
@@ -27,6 +28,19 @@ current = true
 modulate = Color( 0, 0, 0, 0.00392157 )
 margin_right = 1022.0
 margin_bottom = 600.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="cameraText" type="Label" parent="camera/CanvasLayer"]
+margin_top = 486.0
+margin_right = 1024.0
+margin_bottom = 543.0
+rect_min_size = Vector2( 1024, 0 )
+custom_fonts/font = ExtResource( 2 )
+text = "Press e to interact"
+align = 1
+valign = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }

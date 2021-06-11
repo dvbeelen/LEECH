@@ -13,7 +13,6 @@ func _ready():
 	chatLog.get_child(0).rect_scale.x = 0
 	characterCount.text = String(Global.maxCharactersForChat)
 	writeLine.max_length = Global.maxCharactersForChat
-	writeLine.grab_focus()
 	client.connect("connection_closed", self, "closeConn")
 	client.connect("connection_error", self, "errConn")
 	client.connect("connection_established", self, "conn")
@@ -24,18 +23,26 @@ func _ready():
 		print("Unable to connect.")
 		set_process(false)
 
+func startChat():
+#	get_node("CanvasLayer").get_child(0).visible = false
+#	self.visible = false
+	writeLine.grab_focus()
+
 func _process(_delta):
 	client.poll()
-	if Input.is_action_just_pressed("enter"):
-		var nPayload = {
-			"method": "chat",
-			"username": Global.playerName,
-			"message": writeLine.text
-		}
-		writeLine.clear()
-		send(nPayload)
-	if Input.is_action_just_pressed("escape"):
-		Global.gotoScene("res://TestScene.tscn")
+	if self.visible:
+		startChat()
+		if Input.is_action_just_pressed("enter"):
+			var nPayload = {
+				"method": "chat",
+				"username": Global.playerName,
+				"message": writeLine.text
+			}
+			writeLine.clear()
+			send(nPayload)
+		if Input.is_action_just_pressed("escape"):
+			Global.playerStateSwitch()
+			Global.closeChat()
 
 func closeConn(was_clean = false):
 	print("Closed: clean " + String(was_clean))

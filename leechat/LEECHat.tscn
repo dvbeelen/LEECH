@@ -39,6 +39,7 @@ font_data = ExtResource( 2 )
 font_data = ExtResource( 2 )
 
 [node name="LEECHat" type="Control"]
+visible = false
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -110,6 +111,7 @@ custom_colors/font_color = Color( 0.00392157, 0.427451, 0.231373, 1 )
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+visible = false
 material = ExtResource( 3 )
 margin_right = 1024.0
 margin_bottom = 600.0

@@ -1,12 +1,5 @@
 extends Node
 
-var current_frame = ""
-
-var red_frame: bool = false
-var green_frame: bool = false
-var blue_frame: bool = false
-
-
 #Player information
 var playerName = "Player 1"
 var playerColor = ''
@@ -29,3 +22,24 @@ func _deferred_gotoScene(path):
 	scene = res.instance()
 	scene.connect("tree_entered", get_tree(), "set_current_scene", [scene], CONNECT_ONESHOT)
 	root.add_child(scene)
+
+func addSceneToCurrentScene(new_scene):
+	scene.add_child(new_scene.instance())
+
+func openChat():
+	playerStateSwitch()
+	scene.get_node("LEECHat").visible = true
+	scene.get_node("LEECHat/CanvasLayer/ColorRect").visible = true
+
+func closeChat():
+	scene.get_node("LEECHat").visible = false
+	scene.get_node("LEECHat/CanvasLayer/ColorRect").visible = false
+
+func playerStateSwitch():
+	scene.get_node("Player").playerStateSwitch()
+
+func showInteractionPrompt():
+	scene.get_node("Player").showInteractionPrompt()
+
+func hideInteractionPrompt():
+	scene.get_node("Player").hideInteractionPrompt()
