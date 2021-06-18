@@ -381,19 +381,10 @@ transform = Transform( 1.17, 0, 0, 0, 1, 0, 0, 0, 1.17, -15.0118, 0, 0 )
 [node name="Table" parent="Assets/Room/Tables" instance=ExtResource( 6 )]
 transform = Transform( 0.12, 0, 0, 0, 0.15, 0, 0, 0, 0.2, 0, 0, 6 )
 
-[node name="Table2" parent="Assets/Room/Tables" instance=ExtResource( 6 )]
-transform = Transform( 0.08, 0, 0, 0, 0.15, 0, 0, 0, 0.1, -14, 0.01, 6.5 )
-
-[node name="Table3" parent="Assets/Room/Tables" instance=ExtResource( 6 )]
-transform = Transform( 0.08, 0, 0, 0, 0.15, 0, 0, 0, 0.1, -14, 0.01, -6.5 )
-
-[node name="Table4" parent="Assets/Room/Tables" instance=ExtResource( 6 )]
-transform = Transform( -1.30337e-08, 0, 0.1, 0, 0.15, 0, -0.08, 0, -1.62921e-08, -21.5, 0, 0 )
-
 [node name="Paintings" type="Spatial" parent="Assets/Room"]
 
 [node name="riverStreet" parent="Assets/Room/Paintings" instance=ExtResource( 14 )]
-transform = Transform( 2.59875e-07, -0.4, -1.74846e-08, 0, -1.74846e-08, 0.4, -0.6, -1.7325e-07, -7.57301e-15, 22.2, 2.989, 0 )
+transform = Transform( 0.6, 0, 0, 0, -6.51683e-08, 0.4, 0, -0.4, -6.51683e-08, 15, 2.989, 7 )
 
 [node name="Clues" type="Spatial" parent="Assets/Room"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.01, 0 )
@@ -409,10 +400,10 @@ Text = "BOTTOM LEFT"
 fontPath = "res://fonts/templar.tres"
 
 [node name="masonCypher" parent="Assets/Room/Clues" instance=ExtResource( 16 )]
-transform = Transform( -6.51683e-08, 0, 0.4, 0, 0.3, 0, -0.4, 0, -6.51683e-08, -14, 1.79, 6.5 )
+transform = Transform( -2.44381e-07, 0.3, 0, -1.5, -4.88762e-08, 0, 0, 0, 1.5, -22.45, 3, 3 )
 
 [node name="prehisCypher" parent="Assets/Room/Clues" instance=ExtResource( 17 )]
-transform = Transform( 4.76995e-09, 0, -0.4, 0, 0.3, 0, 0.4, 0, 4.76995e-09, -14, 1.79, -6.5 )
+transform = Transform( -2.44381e-07, 0.3, 0, -1.5, -4.88762e-08, 0, 0, 0, 1.5, -22.45, 3, -3 )
 
 [node name="Computer" parent="Assets" instance=ExtResource( 7 )]
 transform = Transform( -1.62921e-08, 0, 0.1, 0, 0.1, 0, -0.1, 0, -1.62921e-08, 0, 1.78243, 6.19393 )
