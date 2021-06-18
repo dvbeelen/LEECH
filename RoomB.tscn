@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://addons/writing_on_the_wall/sub_generator.gd" type="Script" id=1]
 [ext_resource path="res://addons/writing_on_the_wall/managers/display_manager.gd" type="Script" id=2]
@@ -13,6 +13,9 @@
 [ext_resource path="res://addons/writing_on_the_wall/subtitle_parts/Display/sub_display.tscn" type="PackedScene" id=11]
 [ext_resource path="res://tools/interactionZone/interactionZone.tscn" type="PackedScene" id=12]
 [ext_resource path="res://leechat/LEECHat.tscn" type="PackedScene" id=13]
+[ext_resource path="res://tools/staticWallText/staticDisplay.tscn" type="PackedScene" id=14]
+[ext_resource path="res://Assets/cyphers/templar/templarCypher.tscn" type="PackedScene" id=15]
+[ext_resource path="res://Assets/cyphers/hyro/hyroCypher.tscn" type="PackedScene" id=16]
 
 [node name="RoomB" type="Spatial"]
 script = ExtResource( 3 )
@@ -381,13 +384,31 @@ transform = Transform( 1.17, 0, 0, 0, 1, 0, 0, 0, 1.17, -15.0118, 0, 0 )
 transform = Transform( 0.12, 0, 0, 0, 0.15, 0, 0, 0, 0.2, 0, 0.01, 6 )
 
 [node name="Table2" parent="Assets/Room/Tables" instance=ExtResource( 6 )]
-transform = Transform( 0.08, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 15, 0, 6.5 )
+transform = Transform( 0.08, 0, 0, 0, 0.15, 0, 0, 0, 0.1, 15, 0, 6.5 )
 
 [node name="Table3" parent="Assets/Room/Tables" instance=ExtResource( 6 )]
-transform = Transform( 0.08, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 15, 0, -6.5 )
+transform = Transform( 0.08, 0, 0, 0, 0.15, 0, 0, 0, 0.1, 15, 0, -6.5 )
 
 [node name="Table4" parent="Assets/Room/Tables" instance=ExtResource( 6 )]
-transform = Transform( -1.30337e-08, 0, 0.1, 0, 0.1, 0, -0.08, 0, -1.62921e-08, 21.5, 0, 0 )
+transform = Transform( -1.30337e-08, 0, 0.1, 0, 0.15, 0, -0.08, 0, -1.62921e-08, 21.5, 0, 0 )
+
+[node name="Clues" type="Spatial" parent="Assets/Room"]
+
+[node name="StaticDisplay" parent="Assets/Room/Clues" instance=ExtResource( 14 )]
+transform = Transform( -1, 0, 3.25841e-07, 0, 1, 0, -3.25841e-07, 0, -1, 14, 3, 7.4 )
+Text = "LOOK IN RIVER"
+fontPath = "res://fonts/masonic.tres"
+
+[node name="StaticDisplay2" parent="Assets/Room/Clues" instance=ExtResource( 14 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 15.2, 3, -7.4 )
+Text = "BLUE HOUSE"
+fontPath = "res://fonts/prehis.tres"
+
+[node name="templarCypher" parent="Assets/Room/Clues" instance=ExtResource( 15 )]
+transform = Transform( -6.51683e-08, 0, 0.4, 0, 0.3, 0, -0.4, 0, -6.51683e-08, 15, 1.79, 6.5 )
+
+[node name="hyroCypher" parent="Assets/Room/Clues" instance=ExtResource( 16 )]
+transform = Transform( 4.76995e-09, 0, -0.4, 0, 0.3, 0, 0.4, 0, 4.76995e-09, 15, 1.79, -6.5 )
 
 [node name="Computer" parent="Assets" instance=ExtResource( 7 )]
 transform = Transform( -1.62921e-08, 0, 0.1, 0, 0.1, 0, -0.1, 0, -1.62921e-08, 0, 1.78243, 6.14777 )
