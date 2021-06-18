@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://addons/writing_on_the_wall/sub_generator.gd" type="Script" id=1]
 [ext_resource path="res://addons/writing_on_the_wall/managers/display_manager.gd" type="Script" id=2]
@@ -16,6 +16,8 @@
 [ext_resource path="res://tools/staticWallText/staticDisplay.tscn" type="PackedScene" id=14]
 [ext_resource path="res://Assets/cyphers/templar/templarCypher.tscn" type="PackedScene" id=15]
 [ext_resource path="res://Assets/cyphers/hyro/hyroCypher.tscn" type="PackedScene" id=16]
+[ext_resource path="res://Assets/paintings/lake/painiting_lake.tscn" type="PackedScene" id=17]
+[ext_resource path="res://Assets/paintings/forest/painting_forest.tscn" type="PackedScene" id=18]
 
 [node name="RoomB" type="Spatial"]
 script = ExtResource( 3 )
@@ -400,6 +402,14 @@ transform = Transform( -2.44381e-07, -0.3, 0, -1.5, 4.88762e-08, 4.88762e-07, -4
 
 [node name="hyroCypher" parent="Assets/Room/Clues" instance=ExtResource( 16 )]
 transform = Transform( -2.44381e-07, -0.3, 0, -1.5, 4.88762e-08, 4.88762e-07, -4.88762e-07, 1.59259e-14, -1.5, 22.35, 3, -3 )
+
+[node name="Paintings" type="Spatial" parent="Assets/Room"]
+
+[node name="painiting_lake" parent="Assets/Room/Paintings" instance=ExtResource( 17 )]
+transform = Transform( 0.6, 0, 0, 0, -6.51683e-08, 0.4, 0, -0.4, -6.51683e-08, -15, 3, 7.2 )
+
+[node name="painting_forest" parent="Assets/Room/Paintings" instance=ExtResource( 18 )]
+transform = Transform( -0.6, 1.30337e-07, 2.12345e-14, 0, -6.51683e-08, 0.4, 1.95505e-07, 0.4, 6.51683e-08, -15, 3, -7.2 )
 
 [node name="Computer" parent="Assets" instance=ExtResource( 7 )]
 transform = Transform( -1.62921e-08, 0, 0.1, 0, 0.1, 0, -0.1, 0, -1.62921e-08, 0, 1.78243, 6.14777 )
