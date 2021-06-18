@@ -98,7 +98,7 @@ custom_fonts/font = SubResource( 8 )
 custom_colors/cursor_color = Color( 0.00392157, 0.427451, 0.231373, 1 )
 custom_colors/font_color = Color( 0.00392157, 0.427451, 0.231373, 1 )
 max_length = 30
-placeholder_text = "Type here, press enter to send"
+placeholder_text = "Type here, press enter to send. Escape to leave"
 caret_blink = true
 
 [node name="characterCount" type="Label" parent="boxContainer/HBoxContainer"]
