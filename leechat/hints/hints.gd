@@ -5,6 +5,7 @@ onready var writeLine = $boxContainer/HBoxContainer/writeLine
 onready var nameLabel = $boxContainer/HBoxContainer/Label
 
 var methodChosen = false
+var questionAnswered = false
 var scoldedOrAnswered = false
 
 var hints = [
@@ -22,15 +23,15 @@ var questions = [
 	'What is your favorite food?',
 	'What is your favorite tv show?',
 	'What is your favorite sport?',
-	'',
-	'Look in the lake',
-	'Look at the top-left tree',
-	'Look at the right in the sky above the mountains',
-	'The correct order is house, tree, mountain, lake'
+	'Who is your favorite musical artist?',
+	'What is your favorite movie?',
+	'What is the last thing you bought from the grocery store?',
+	'What is the last piece of clothing you bought?',
+	'What is your favorite color of shoe?'
 ]
 
 func _ready():
-	chatLog.text = "Need a hint?"
+	chatLog.text = "Need a hint?, you have " + String(hints.size() - Global.hintsSeen) + " hints remaining"
 
 func startChat():
 	writeLine.grab_focus()
@@ -66,6 +67,20 @@ func chatLogPrint(username, text):
 		chatLog.text = 'Thank you!'
 		yield(get_tree().create_timer(2.5), 'timeout')
 		chatLog.text = 'Please provide an answer, even if the question does not fully apply to you.'
+		yield(get_tree().create_timer(2.5), 'timeout')
+		chatLog.text = questions[Global.questionsAnswered]
+		questionAnswered = true
+		return
+	if methodChosen && questionAnswered && !scoldedOrAnswered:
+		chatLog.text = 'Interesting answer, thank you for providing it.'
+		yield(get_tree().create_timer(2.5), 'timeout')
+		chatLog.text = 'Your co operation is greatly appreciated..'
+		yield(get_tree().create_timer(2.5), 'timeout')
+		chatLog.text = 'Press enter to receive your hint'
+		saveGivenAnswer(text, Global.questionsAnswered)
+		increaseQuestionsAnswered()
+		scoldedOrAnswered = true
+		return
 	if methodChosen && text == 'no':
 		chatLog.text = 'I see, I am sorry to hear that.'
 		yield(get_tree().create_timer(2.5), 'timeout')
@@ -77,12 +92,26 @@ func chatLogPrint(username, text):
 		lowerCharacters()
 		yield(get_tree().create_timer(2.5), 'timeout')
 		chatLog.text = 'Press enter to receive the hint'
+		questionAnswered = true
 		scoldedOrAnswered = true
 		return
-	if scoldedOrAnswered:
+	if methodChosen && questionAnswered && scoldedOrAnswered:
+		methodChosen = false
 		chatLog.text = hints[Global.hintsSeen]
 		Global.hintsSeen += 1
+		yield(get_tree().create_timer(12), 'timeout')
+		questionAnswered = false
+		scoldedOrAnswered = false
+		chatLogPrint(Global.playerName, writeLine.text)
+		return
 
 func lowerCharacters():
 	Global.maxCharactersForChat -= 10
 	print(Global.maxCharactersForChat)
+
+func increaseQuestionsAnswered():
+	Global.questionsAnswered += 1
+
+func saveGivenAnswer(answer, number):
+	Global.givenAnswers[number] = answer
+	print (Global.givenAnswers[number])

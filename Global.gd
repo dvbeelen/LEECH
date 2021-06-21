@@ -16,7 +16,20 @@ var door1opened = false
 var door2opened = false
 var tutorialEndReached = false
 var hintsSeen = 0
+var questionsAnswered = 0
 
+var givenAnswers = {
+	0: '',
+	1: '',
+	2: '',
+	3: '',
+	4: '',
+	5: '',
+	6: '',
+	7: '',
+}
+
+#Internal info
 var root
 var scene
 var mouseRotationEnabled = true
