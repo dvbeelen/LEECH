@@ -1,0 +1,182 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Assets/numpad/numpad_cutout.jpg" type="Texture" id=1]
+[ext_resource path="res://Assets/numpad/numPadInteract.gd" type="Script" id=2]
+[ext_resource path="res://fonts/mainFont.tres" type="DynamicFont" id=3]
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0.00392157, 0.427451, 0.231373, 1 )
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color( 0.0627451, 0.0980392, 0.0666667, 1 )
+
+[node name="numPadInteract" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="background" type="TextureRect" parent="."]
+margin_left = 331.189
+margin_top = 90.6764
+margin_right = 1057.19
+margin_bottom = 1032.68
+rect_scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="buttoncontainer" type="VBoxContainer" parent="background"]
+margin_left = 80.0
+margin_top = 85.0
+margin_right = 806.0
+margin_bottom = 925.0
+custom_constants/separation = 50
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="keyRow1" type="HBoxContainer" parent="background/buttoncontainer"]
+margin_right = 726.0
+margin_bottom = 150.0
+rect_min_size = Vector2( 580, 150 )
+custom_constants/separation = 55
+
+[node name="1" type="Button" parent="background/buttoncontainer/keyRow1" groups=[
+"numberKeys",
+]]
+margin_right = 150.0
+margin_bottom = 150.0
+rect_min_size = Vector2( 150, 150 )
+flat = true
+
+[node name="2" type="Button" parent="background/buttoncontainer/keyRow1" groups=[
+"numberKeys",
+]]
+margin_left = 205.0
+margin_right = 355.0
+margin_bottom = 150.0
+rect_min_size = Vector2( 150, 150 )
+flat = true
+
+[node name="3" type="Button" parent="background/buttoncontainer/keyRow1" groups=[
+"numberKeys",
+]]
+margin_left = 410.0
+margin_right = 560.0
+margin_bottom = 150.0
+rect_min_size = Vector2( 150, 150 )
+flat = true
+
+[node name="keyRow2" type="HBoxContainer" parent="background/buttoncontainer"]
+margin_top = 200.0
+margin_right = 726.0
+margin_bottom = 350.0
+rect_min_size = Vector2( 580, 150 )
+custom_constants/separation = 55
+
+[node name="4" type="Button" parent="background/buttoncontainer/keyRow2" groups=[
+"numberKeys",
+]]
+margin_right = 150.0
+margin_bottom = 150.0
+rect_min_size = Vector2( 150, 150 )
+flat = true
+
+[node name="5" type="Button" parent="background/buttoncontainer/keyRow2" groups=[
+"numberKeys",
+]]
+margin_left = 205.0
+margin_right = 355.0
+margin_bottom = 150.0
+rect_min_size = Vector2( 150, 150 )
+flat = true
+
+[node name="6" type="Button" parent="background/buttoncontainer/keyRow2" groups=[
+"numberKeys",
+]]
+margin_left = 410.0
+margin_right = 560.0
+margin_bottom = 150.0
+rect_min_size = Vector2( 150, 150 )
+flat = true
+
+[node name="keyRow3" type="HBoxContainer" parent="background/buttoncontainer"]
+margin_top = 400.0
+margin_right = 726.0
+margin_bottom = 550.0
+rect_min_size = Vector2( 580, 150 )
+custom_constants/separation = 55
+
+[node name="7" type="Button" parent="background/buttoncontainer/keyRow3" groups=[
+"numberKeys",
+]]
+margin_right = 150.0
+margin_bottom = 150.0
+rect_min_size = Vector2( 150, 150 )
+flat = true
+
+[node name="8" type="Button" parent="background/buttoncontainer/keyRow3" groups=[
+"numberKeys",
+]]
+margin_left = 205.0
+margin_right = 355.0
+margin_bottom = 150.0
+rect_min_size = Vector2( 150, 150 )
+flat = true
+
+[node name="9" type="Button" parent="background/buttoncontainer/keyRow3" groups=[
+"numberKeys",
+]]
+margin_left = 410.0
+margin_right = 560.0
+margin_bottom = 150.0
+rect_min_size = Vector2( 150, 150 )
+flat = true
+
+[node name="keyRow4" type="HBoxContainer" parent="background/buttoncontainer"]
+margin_top = 600.0
+margin_right = 726.0
+margin_bottom = 750.0
+rect_min_size = Vector2( 580, 150 )
+custom_constants/separation = 55
+
+[node name="reset" type="Button" parent="background/buttoncontainer/keyRow4"]
+margin_right = 150.0
+margin_bottom = 150.0
+rect_min_size = Vector2( 150, 150 )
+flat = true
+
+[node name="0" type="Button" parent="background/buttoncontainer/keyRow4" groups=[
+"numberKeys",
+]]
+margin_left = 205.0
+margin_right = 355.0
+margin_bottom = 150.0
+rect_min_size = Vector2( 150, 150 )
+flat = true
+
+[node name="enter" type="Button" parent="background/buttoncontainer/keyRow4"]
+margin_left = 410.0
+margin_right = 560.0
+margin_bottom = 150.0
+rect_min_size = Vector2( 150, 150 )
+flat = true
+
+[node name="display" type="Label" parent="."]
+margin_left = 331.189
+margin_top = 37.1886
+margin_right = 691.189
+margin_bottom = 87.1886
+custom_styles/normal = SubResource( 1 )
+custom_fonts/font = ExtResource( 3 )
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}

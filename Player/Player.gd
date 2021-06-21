@@ -32,14 +32,15 @@ func _process(delta):
 		get_tree().quit()
 	
 #	Move Camera based on mouse movement
-	camera.rotation_degrees.x -= mouseDelta.y * lookSensitivity * delta
-	camera.rotation_degrees.x = clamp(camera.rotation_degrees.x, minLookAngle, maxLookAngle)
-	
-#	Rotate player based on mouse movement
-	rotation_degrees.y -= mouseDelta.x * lookSensitivity * delta
-	
-#	Reset mouse vector
-	mouseDelta = Vector2()
+	if Global.mouseRotationEnabled:
+		camera.rotation_degrees.x -= mouseDelta.y * lookSensitivity * delta
+		camera.rotation_degrees.x = clamp(camera.rotation_degrees.x, minLookAngle, maxLookAngle)
+		
+	#	Rotate player based on mouse movement
+		rotation_degrees.y -= mouseDelta.x * lookSensitivity * delta
+		
+	#	Reset mouse vector
+		mouseDelta = Vector2()
 	
 ##	Reset mouse to center of screen
 #	get_viewport().warp_mouse(get_viewport().size / 2)

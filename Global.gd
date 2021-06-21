@@ -3,11 +3,15 @@ extends Node
 #Player information
 var playerName = "Player 1"
 var playerColor = ''
-var roomName = "1"
+
+#Game information
 var maxCharactersForChat = 70
+var doorUnlocked = false
+var doorCode = ['0', '9', '7', '4']
 
 var root
 var scene
+var mouseRotationEnabled = true
 
 func _ready():
 	root = get_tree().get_root()
@@ -43,3 +47,14 @@ func showInteractionPrompt():
 
 func hideInteractionPrompt():
 	scene.get_node("Player").hideInteractionPrompt()
+
+func addInteractableToCamera(path):
+	var interactableScene = load(path)
+	var interactable = interactableScene.instance()
+	scene.get_node("Player/camera/CanvasLayer").add_child(interactable)
+
+func removeInteractableFromCamera(nodeName):
+	var removeNode = scene.get_node("Player/camera/CanvasLayer").get_node(nodeName)
+	removeNode.queue_free()
+	if !mouseRotationEnabled:
+		mouseRotationEnabled = true

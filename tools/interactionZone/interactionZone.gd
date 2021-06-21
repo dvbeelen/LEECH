@@ -18,6 +18,11 @@ func _process(delta):
 			'chat':
 				interactableStarted = true
 				Global.openChat()
+			'numPad':
+				interactableStarted = true
+				Global.addInteractableToCamera('res://Assets/numpad/numPadInteract.tscn')
+				Global.playerStateSwitch()
+				Global.mouseRotationEnabled = false
 
 func _on_interactionZone_body_exited(body):
 	if body.name == 'Player':

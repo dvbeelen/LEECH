@@ -1,5 +1,6 @@
 extends Control
 
+#export var url = "ws://136.144.221.56:8086/"
 export var url = "ws://localhost:8080/"
 
 var client = WebSocketClient.new()
