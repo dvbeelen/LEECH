@@ -394,7 +394,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.01, 0 )
 
 [node name="StaticDisplay" parent="Assets/Room/Clues" instance=ExtResource( 15 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -14, 3, -7.40451 )
-Text = "TOP RIGHT"
+Text = "RIGHT SKY"
 fontPath = "res://fonts/hiero.tres"
 
 [node name="StaticDisplay2" parent="Assets/Room/Clues" instance=ExtResource( 15 )]

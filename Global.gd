@@ -10,7 +10,7 @@ var playerFact3 = ''
 #Game information
 var maxCharactersForChat = 70
 var doorUnlocked = false
-var doorCode = ['0', '9', '7', '4']
+var doorCode = ['5', '7', '2', '9']
 var introPlayed = false
 var door1opened = false
 var door2opened = false
