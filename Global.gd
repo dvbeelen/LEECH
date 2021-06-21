@@ -3,11 +3,15 @@ extends Node
 #Player information
 var playerName = "Player 1"
 var playerColor = ''
+var playerFact1 = ''
+var playerFact2 = ''
+var playerFact3 = ''
 
 #Game information
 var maxCharactersForChat = 70
 var doorUnlocked = false
 var doorCode = ['0', '9', '7', '4']
+var introPlayed = false
 
 var root
 var scene
@@ -32,8 +36,12 @@ func addSceneToCurrentScene(new_scene):
 
 func openChat():
 	playerStateSwitch()
-	scene.get_node("LEECHat").visible = true
-	scene.get_node("LEECHat/CanvasLayer/ColorRect").visible = true
+	if !introPlayed:
+		scene.get_node("GameStart").visible = true
+		scene.get_node("GameStart/CanvasLayer/ColorRect").visible = true
+	else:
+		scene.get_node("LEECHat").visible = true
+		scene.get_node("LEECHat/CanvasLayer/ColorRect").visible = true
 
 func closeChat():
 	scene.get_node("LEECHat").visible = false
