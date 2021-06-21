@@ -60,9 +60,17 @@ func openChat():
 		scene.get_node("LEECHat").visible = true
 		scene.get_node("LEECHat/CanvasLayer/ColorRect").visible = true
 
+func openHint():
+	scene.get_node("HintsChat").visible = true
+	scene.get_node("HintsChat/CanvasLayer/ColorRect").visible = true
+
 func closeChat():
 	scene.get_node("LEECHat").visible = false
 	scene.get_node("LEECHat/CanvasLayer/ColorRect").visible = false
+
+func closeHint():
+	scene.get_node("HintsChat").visible  = false
+	scene.get_node("HintsChat/CanvasLayer/ColorRect").visible = false
 
 func playerStateSwitch():
 	scene.get_node("Player").playerStateSwitch()

@@ -26,6 +26,10 @@ func _process(delta):
 				Global.addInteractableToCamera('res://Assets/numpad/numPadInteract.tscn')
 				Global.playerStateSwitch()
 				Global.mouseRotationEnabled = false
+			'hint':
+				interactableStarted = true
+				Global.playerStateSwitch()
+				Global.openHint()
 
 func _on_interactionZone_body_exited(body):
 	if body.name == 'Player':

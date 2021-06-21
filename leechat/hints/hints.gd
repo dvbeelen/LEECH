@@ -43,13 +43,16 @@ func _process(_delta):
 			chatLogPrint(Global.playerName, writeLine.text)
 			writeLine.clear()
 		if Input.is_action_just_pressed("escape"):
-			self.visible = false
-			$CanvasLayer/ColorRect.visible = false
+			Global.closeHint()
+			chatLog.text = "Need a hint?, you have " + String(hints.size() - Global.hintsSeen) + " hints remaining"
+			methodChosen = false
+			questionAnswered = false
+			scoldedOrAnswered = false
+			Global.playerStateSwitch()
 
 func chatLogPrint(username, text):
 #	Setting playername for the first time
 	if !methodChosen:
-		print('setting player name')
 		Global.playerName = text
 		nameLabel = Global.playerName
 		chatLog.text = "I will give you a hint, but I would like something in return."
@@ -102,7 +105,7 @@ func chatLogPrint(username, text):
 		yield(get_tree().create_timer(12), 'timeout')
 		questionAnswered = false
 		scoldedOrAnswered = false
-		chatLogPrint(Global.playerName, writeLine.text)
+		chatLog.text = "Need a hint?, you have " + String(hints.size() - Global.hintsSeen) + " hints remaining"
 		return
 
 func lowerCharacters():
@@ -114,4 +117,4 @@ func increaseQuestionsAnswered():
 
 func saveGivenAnswer(answer, number):
 	Global.givenAnswers[number] = answer
-	print (Global.givenAnswers[number])
+	print (Global.givenAnswers)

@@ -1,8 +1,9 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://tools/introTitles/introTitles.tscn" type="PackedScene" id=1]
 [ext_resource path="res://leechat/intro/GameStart.tscn" type="PackedScene" id=2]
 [ext_resource path="res://RoomScript.gd" type="Script" id=3]
+[ext_resource path="res://leechat/hints/hints.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Assets/floor/Floor.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Assets/table/Table.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Assets/computer/Computer.tscn" type="PackedScene" id=7]
@@ -358,6 +359,7 @@ transform = Transform( 1.17, 0, 0, 0, 1, 0, 0, 0, 1.17, -15.0118, 0, 0 )
 
 [node name="Ceiling" type="Spatial" parent="Assets/Room"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6, 0 )
+visible = false
 
 [node name="Floor" parent="Assets/Room/Ceiling" instance=ExtResource( 5 )]
 transform = Transform( 1.17, 0, 0, 0, 1, 0, 0, 0, 1.17, -0.00429678, 0.0316992, 0.0193009 )
@@ -434,6 +436,16 @@ interaction = "chat"
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.96462, 1.55124, -6.59439 )
 interaction = "numPad"
 
+[node name="interactionZone4" parent="." instance=ExtResource( 12 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -20.8454, 1.55124, 0.476116 )
+interaction = "hint"
+
+[node name="interactionZone5" parent="." instance=ExtResource( 12 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 9.34712, 1.55124, 4.80536 )
+interaction = "hint"
+
 [node name="interactionZone3" parent="." instance=ExtResource( 12 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -15.9062, 1.55124, 0.127139 )
 interaction = "doorOpen"
+
+[node name="HintsChat" parent="." instance=ExtResource( 4 )]
