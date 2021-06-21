@@ -12,6 +12,9 @@ var maxCharactersForChat = 70
 var doorUnlocked = false
 var doorCode = ['0', '9', '7', '4']
 var introPlayed = false
+var door1opened = false
+var door2opened = false
+var tutorialEndReached = false
 
 var root
 var scene

@@ -9,6 +9,7 @@ func _ready():
 
 func _process(delta):
 	if Input.is_action_just_pressed("escape"):
+		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 		Global.removeInteractableFromCamera(self.name)
 		Global.playerStateSwitch()
 

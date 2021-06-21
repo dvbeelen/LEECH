@@ -414,6 +414,9 @@ transform = Transform( -1.62921e-08, 0, 0.1, 0, 0.1, 0, -0.1, 0, -1.62921e-08, 0
 [node name="Computer2" parent="Assets" instance=ExtResource( 7 )]
 transform = Transform( -0.0965926, -0.0258819, 3.25841e-08, -0.0258819, 0.0965926, 0, -3.14739e-08, -8.4334e-09, -0.1, -8.19304, 3, 4.894 )
 
+[node name="Computer3" parent="Assets" instance=ExtResource( 7 )]
+transform = Transform( -0.0965926, -0.0258819, 3.25841e-08, -0.0258819, 0.0965926, 0, -3.14739e-08, -8.4334e-09, -0.1, 22, 3, 3.25636 )
+
 [node name="numpad" parent="Assets" instance=ExtResource( 19 )]
 transform = Transform( -0.5, 1.94707e-07, 8.51092e-15, 0, -2.18557e-08, 0.5, 1.94707e-07, 0.5, 2.18557e-08, 2, 3, -7.4 )
 
@@ -424,6 +427,10 @@ interaction = "chat"
 [node name="interactionZone2" parent="." instance=ExtResource( 12 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.12142, 1.46232, -6.19523 )
 interaction = "numPad"
+
+[node name="interactionZone3" parent="." instance=ExtResource( 12 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -15.8589, 1.46232, 0.274997 )
+interaction = "doorOpen"
 
 [node name="LEECHat" parent="." instance=ExtResource( 13 )]
 

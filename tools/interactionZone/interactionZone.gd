@@ -7,8 +7,11 @@ var interactableStarted = false
 
 func _on_interactionZone_body_entered(body):
 	if body.name == 'Player':
-		Global.showInteractionPrompt()
-		inZone = true
+		if interaction == 'doorOpen':
+			Global.tutorialEndReached = true
+		else:
+			Global.showInteractionPrompt()
+			inZone = true
 
 func _process(delta):
 	if Input.is_action_just_pressed("interact") && inZone && !interactableStarted:
