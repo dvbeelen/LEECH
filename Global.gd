@@ -29,12 +29,24 @@ var givenAnswers = {
 	7: '',
 }
 
+var advertisements = {
+	0: 'Order ' + String(givenAnswers[0]) + ' with DeliverFood today! \n second order half price!',
+	1: 'Get the complete ' + givenAnswers[1] + ' collection on blueRat! \n Buy now!',
+	2: 'Get the best ' + givenAnswers[2] + ' matches on cable! \n sign up now for a first free month!',
+	3: 'The greatest hits of ' + givenAnswers[3] + ', now collected! \n limited edition, only for true fans!',
+	4: 'Only real fans will now all the answers to this ' + givenAnswers[4] + 'quiz! \n can you get all questions correct?',
+	5: 'Always running out of ' + givenAnswers[5] + '?! \n Sign up with us to get it delivered weekly!',
+	6: 'Are ' + givenAnswers[6] + 'already old news? \n this aricle will shock you!',
+	7: 'Study shows people who like ' + givenAnswers[7] + 'might be smarter then most! \n Find out why soon!',
+}
+
 #Internal info
 var root
 var scene
 var mouseRotationEnabled = true
 
 func _ready():
+	print(givenAnswers[0])
 	root = get_tree().get_root()
 	scene = root.get_child( root.get_child_count() -1 )
 

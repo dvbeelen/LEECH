@@ -1,0 +1,44 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://fonts/mainFont.tres" type="DynamicFont" id=1]
+[ext_resource path="res://leechat/advertisements/advertisements-export.png" type="Texture" id=3]
+[ext_resource path="res://fonts/biggerMain.tres" type="DynamicFont" id=4]
+
+[node name="Advertisement" type="Control"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+texture = ExtResource( 3 )
+
+[node name="AddTexts" type="Label" parent="."]
+margin_left = 125.0
+margin_top = 100.0
+margin_right = 925.0
+margin_bottom = 400.0
+rect_min_size = Vector2( 800, 300 )
+custom_fonts/font = ExtResource( 4 )
+custom_colors/font_color = Color( 0.0627451, 0.0980392, 0.0666667, 1 )
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Countdown" type="Label" parent="."]
+margin_left = 124.0
+margin_top = 498.585
+margin_right = 924.0
+margin_bottom = 598.585
+rect_min_size = Vector2( 800, 100 )
+custom_fonts/font = ExtResource( 1 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "Skips in 15 seconds"
+align = 1
+valign = 1

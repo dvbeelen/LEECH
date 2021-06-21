@@ -8,7 +8,9 @@ onready var chatLog = $boxContainer/chatLog
 onready var writeLine = $boxContainer/HBoxContainer/writeLine
 onready var nameLabel = $boxContainer/HBoxContainer/playerName
 onready var characterCount = $boxContainer/HBoxContainer/characterCount
+var addPreload = preload('res://leechat/advertisements/Advertisement.tscn')
 var enteredTextSize = 0
+var adShown = false
 
 func _ready():
 	chatLog.get_child(0).rect_scale.x = 0
@@ -32,18 +34,25 @@ func startChat():
 func _process(_delta):
 	client.poll()
 	if self.visible:
-		startChat()
-		if Input.is_action_just_pressed("enter"):
-			var nPayload = {
-				"method": "chat",
-				"username": Global.playerName,
-				"message": writeLine.text
-			}
-			writeLine.clear()
-			send(nPayload)
-		if Input.is_action_just_pressed("escape"):
-			Global.playerStateSwitch()
-			Global.closeChat()
+		if Global.questionsAnswered > 0 && !adShown:
+			$Advertisement.visible = true
+			$Advertisement/AddTexts.text = Global.advertisements[randi()%Global.questionsAnswered]
+			if Input.is_action_just_pressed("space"):
+				$Advertisement.visible = false
+				adShown = true
+		if Global.questionsAnswered < 0 || adShown:
+			startChat()
+			if Input.is_action_just_pressed("enter"):
+				var nPayload = {
+					"method": "chat",
+					"username": Global.playerName,
+					"message": writeLine.text
+				}
+				writeLine.clear()
+				send(nPayload)
+			if Input.is_action_just_pressed("escape"):
+				Global.playerStateSwitch()
+				Global.closeChat()
 
 func closeConn(was_clean = false):
 	print("Closed: clean " + String(was_clean))

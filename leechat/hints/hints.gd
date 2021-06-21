@@ -117,4 +117,4 @@ func increaseQuestionsAnswered():
 
 func saveGivenAnswer(answer, number):
 	Global.givenAnswers[number] = answer
-	print (Global.givenAnswers)
+	print (Global.givenAnswers[0])

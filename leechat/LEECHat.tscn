@@ -1,8 +1,9 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://leechat/LEECHat.gd" type="Script" id=1]
 [ext_resource path="res://fonts/5Computers-In-Love.ttf" type="DynamicFontData" id=2]
 [ext_resource path="res://shader/crt_material.tres" type="Material" id=3]
+[ext_resource path="res://leechat/advertisements/Advertisement.tscn" type="PackedScene" id=4]
 
 [sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0.0627451, 0.0980392, 0.0666667, 1 )
@@ -49,6 +50,9 @@ __meta__ = {
 margin_right = 1024.0
 margin_bottom = 600.0
 custom_styles/panel = SubResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="boxContainer" type="VBoxContainer" parent="."]
 margin_left = 80.0
@@ -119,4 +123,6 @@ mouse_filter = 2
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="Advertisement" parent="." instance=ExtResource( 4 )]
 [connection signal="text_changed" from="boxContainer/HBoxContainer/writeLine" to="." method="_on_writeLine_text_changed"]
