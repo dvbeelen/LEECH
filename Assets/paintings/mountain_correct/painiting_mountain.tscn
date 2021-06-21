@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Assets/paintings/mountain_correct/painiting_mountain.glb" type="PackedScene" id=1]
+
+[node name="painiting_mountain" instance=ExtResource( 1 )]

@@ -17,7 +17,7 @@
 [ext_resource path="res://tools/staticWallText/staticDisplay.tscn" type="PackedScene" id=15]
 [ext_resource path="res://Assets/cyphers/mason/masonCypher.tscn" type="PackedScene" id=16]
 [ext_resource path="res://Assets/cyphers/prehis/prehisCyphher.tscn" type="PackedScene" id=17]
-[ext_resource path="res://Assets/paintings/mountain/painting_mountain.tscn" type="PackedScene" id=18]
+[ext_resource path="res://Assets/paintings/mountain_correct/painiting_mountain.tscn" type="PackedScene" id=18]
 [ext_resource path="res://Assets/numpad/numpad.tscn" type="PackedScene" id=19]
 
 [node name="RoomA" type="Spatial"]
@@ -388,8 +388,8 @@ transform = Transform( 0.12, 0, 0, 0, 0.15, 0, 0, 0, 0.2, 0, 0, 6 )
 [node name="riverStreet" parent="Assets/Room/Paintings" instance=ExtResource( 14 )]
 transform = Transform( 0.6, 0, 0, 0, -6.51683e-08, 0.4, 0, -0.4, -6.51683e-08, 15, 3, 7.2 )
 
-[node name="painting_mountain" parent="Assets/Room/Paintings" instance=ExtResource( 18 )]
-transform = Transform( -0.69, 1.30337e-07, -6.51683e-08, -1.12415e-07, 1.06173e-14, 0.4, 2.24831e-07, 0.4, 1.06173e-14, 15, 3, -7 )
+[node name="painiting_mountain" parent="Assets/Room/Paintings" instance=ExtResource( 18 )]
+transform = Transform( -0.6, 1.30337e-07, -6.51683e-08, -9.77524e-08, 1.06173e-14, 0.4, 1.95505e-07, 0.4, 1.06173e-14, 15, 3, -7.2 )
 
 [node name="Clues" type="Spatial" parent="Assets/Room"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.01, 0 )
@@ -419,7 +419,6 @@ transform = Transform( -0.5, 1.94707e-07, 8.51092e-15, 0, -2.18557e-08, 0.5, 1.9
 [node name="SubGenerator" type="Spatial" parent="."]
 visible = false
 script = ExtResource( 1 )
-story_to_show = ""
 
 [node name="DisplayManager" type="Spatial" parent="SubGenerator"]
 script = ExtResource( 2 )

@@ -17,5 +17,7 @@ func _on_area_body_entered(body):
 func _on_area_body_exited(body):
 	if body.name == 'Player' && disable_on_leave:
 		get_node("area/col").disabled = true
+		$MeshInstance.visible = false
 	else:
 		print('Trigger: exited area')
+	get_parent().get_parent().get_parent().get_node('DisplayManager').set_child_invisible()

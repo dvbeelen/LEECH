@@ -9,13 +9,16 @@ func _ready():
 	if path_to_font:
 		set_display_font(path_to_font)
 
-
 func next_child():
 	if self.get_child(SubManager.current_line):
 		self.get_child(SubManager.current_line).active = true
 		self.get_child(SubManager.current_line).get_node("Viewport/Control/SubDisplayLabel").show_line(SubManager.get_current_line())
 	else:
 		print('Warning: Not enough sub_displays added to show all text.')
+
+func set_child_invisible():
+	self.get_child(SubManager.current_line).active = false
+	self.get_child(SubManager.current_line).visible = false
 
 func set_display_font(path_to_font):
 	for display in self.get_children():

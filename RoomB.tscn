@@ -24,7 +24,7 @@
 script = ExtResource( 3 )
 
 [node name="Player" parent="." instance=ExtResource( 10 )]
-transform = Transform( -1, 0, -3.25841e-07, 0, 1, 0, 3.25841e-07, 0, -1, -0.229252, 0.342573, -3.01674 )
+transform = Transform( -1, 0, -3.25841e-07, 0, 1, 0, 3.25841e-07, 0, -1, -0.229252, 0.342573, -4.76891 )
 
 [node name="DirectionalLight" type="DirectionalLight" parent="."]
 transform = Transform( 1, 0, 0, 0, 1.19249e-08, 1, 0, -1, 1.19249e-08, 0, 6.40968, 0.205259 )
@@ -419,24 +419,72 @@ transform = Transform( -1.62921e-08, 0, 0.1, 0, 0.1, 0, -0.1, 0, -1.62921e-08, 0
 transform = Transform( -0.5, -1.62921e-07, -2.65431e-14, 0, -8.14603e-08, 0.5, -1.62921e-07, 0.5, 8.14603e-08, 2, 3, -7.4 )
 
 [node name="SubGenerator" type="Spatial" parent="."]
-visible = false
 script = ExtResource( 1 )
-story_to_show = ""
+story_to_show = "Intro"
 
 [node name="DisplayManager" type="Spatial" parent="SubGenerator"]
 script = ExtResource( 2 )
 path_to_font = "res://fonts/mainFont.tres"
 
 [node name="SubtitleDisplay" parent="SubGenerator/DisplayManager" instance=ExtResource( 11 )]
-transform = Transform( -1, 0, 3.25841e-07, 0, 1, 0, -3.25841e-07, 0, -1, 0, 2.27412, 5.80144 )
+transform = Transform( -1, 0, 3.25841e-07, 0, 1, 0, -3.25841e-07, 0, -1, 0, 2.27412, -0.290849 )
 
 [node name="SubtitleDisplay2" parent="SubGenerator/DisplayManager" instance=ExtResource( 11 )]
-transform = Transform( -1.62921e-07, 0, 1, 0, 1, 0, -1, 0, -1.62921e-07, 6.5, 2.757, 0 )
+transform = Transform( -1, 0, -3.25841e-07, 0, 1, 0, 3.25841e-07, 0, -1, -0.0619221, 3.44018, 7.39717 )
+
+[node name="SubtitleDisplay3" parent="SubGenerator/DisplayManager" instance=ExtResource( 11 )]
+transform = Transform( -1, 0, -3.25841e-07, 0, 1, 0, 3.25841e-07, 0, -1, 0, 3.48423, 7.35344 )
+
+[node name="SubtitleDisplay4" parent="SubGenerator/DisplayManager" instance=ExtResource( 11 )]
+transform = Transform( -1, 0, -3.25841e-07, 0, 1, 0, 3.25841e-07, 0, -1, 0, 3.6712, 7.02521 )
+
+[node name="SubtitleDisplay5" parent="SubGenerator/DisplayManager" instance=ExtResource( 11 )]
+transform = Transform( -1.62921e-07, 0, 1, 0, 1, 0, -1, 0, -1.62921e-07, -13.5152, 2.72753, -0.439107 )
+
+[node name="SubtitleDisplay6" parent="SubGenerator/DisplayManager" instance=ExtResource( 11 )]
+transform = Transform( -1.62921e-07, 0, 1, 0, 1, 0, -1, 0, -1.62921e-07, -19.2808, 2.72753, -0.439107 )
+
+[node name="SubtitleDisplay7" parent="SubGenerator/DisplayManager" instance=ExtResource( 11 )]
+transform = Transform( -1.62921e-07, 0, -1, 0, 1, 0, 1, 0, -1.62921e-07, 15.0194, 2.72753, -0.439107 )
+
+[node name="SubtitleDisplay8" parent="SubGenerator/DisplayManager" instance=ExtResource( 11 )]
+transform = Transform( -1.62921e-07, 0, -1, 0, 1, 0, 1, 0, -1.62921e-07, 21.7771, 2.72753, -0.439107 )
 
 [node name="Triggers" type="Spatial" parent="SubGenerator"]
 
-[node name="SubtitleTrigger" parent="SubGenerator/Triggers" instance=ExtResource( 4 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.921658, 0 )
+[node name="intro" type="Spatial" parent="SubGenerator/Triggers"]
+
+[node name="SubtitleTrigger" parent="SubGenerator/Triggers/intro" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.921658, -4.18872 )
+disable_on_leave = true
+
+[node name="SubtitleTrigger2" parent="SubGenerator/Triggers/intro" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.921658, -1.81419 )
+disable_on_leave = true
+
+[node name="SubtitleTrigger3" parent="SubGenerator/Triggers/intro" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.921658, 0.556251 )
+disable_on_leave = true
+
+[node name="SubtitleTrigger4" parent="SubGenerator/Triggers/intro" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.921658, 3.01458 )
+disable_on_leave = true
+
+[node name="SubtitleTrigger5" parent="SubGenerator/Triggers/intro" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -10.0487, 1.39638, 0.200082 )
+disable_on_leave = true
+
+[node name="SubtitleTrigger6" parent="SubGenerator/Triggers/intro" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -15.927, 1.39638, 0.200082 )
+disable_on_leave = true
+
+[node name="SubtitleTrigger7" parent="SubGenerator/Triggers/intro" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 17.2162, 1.39638, -0.327906 )
+disable_on_leave = true
+
+[node name="SubtitleTrigger8" parent="SubGenerator/Triggers/intro" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 11.3379, 1.39638, -0.327906 )
+disable_on_leave = true
 
 [node name="LEECHat" parent="." instance=ExtResource( 13 )]
 
