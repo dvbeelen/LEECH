@@ -15,6 +15,7 @@ var introPlayed = false
 var door1opened = false
 var door2opened = false
 var tutorialEndReached = false
+var hintsSeen = 0
 
 var root
 var scene

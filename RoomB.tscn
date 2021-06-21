@@ -358,7 +358,6 @@ transform = Transform( 1.17, 0, 0, 0, 1, 0, 0, 0, 1.17, -15.0118, 0, 0 )
 
 [node name="Ceiling" type="Spatial" parent="Assets/Room"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6, 0 )
-visible = false
 
 [node name="Floor" parent="Assets/Room/Ceiling" instance=ExtResource( 5 )]
 transform = Transform( 1.17, 0, 0, 0, 1, 0, 0, 0, 1.17, -0.00429678, 0.0316992, 0.0193009 )
