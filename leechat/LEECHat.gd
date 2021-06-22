@@ -48,6 +48,8 @@ func _process(_delta):
 				writeLine.clear()
 				send(nPayload)
 			if Input.is_action_just_pressed("escape"):
+				adShown = false
+				$Advertisement.addStarted = false
 				Global.playerStateSwitch()
 				Global.closeChat()
 

@@ -68,5 +68,3 @@ shape = SubResource( 4 )
 
 [node name="Cube" parent="." index="3"]
 visible = false
-[connection signal="body_entered" from="Area" to="." method="_on_Area_body_entered"]
-[connection signal="body_exited" from="Area" to="." method="_on_Area_body_exited"]
