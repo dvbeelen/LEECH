@@ -81,6 +81,7 @@ func chatLogPrint(username, text):
 		yield(get_tree().create_timer(2.5), 'timeout')
 		chatLog.text = 'Press enter to receive your hint'
 		saveGivenAnswer(text, Global.questionsAnswered)
+		Global.updateAdvertisements()
 		increaseQuestionsAnswered()
 		scoldedOrAnswered = true
 		return

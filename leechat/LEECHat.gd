@@ -36,11 +36,8 @@ func _process(_delta):
 	if self.visible:
 		if Global.questionsAnswered > 0 && !adShown:
 			$Advertisement.visible = true
-			$Advertisement/AddTexts.text = Global.advertisements[randi()%Global.questionsAnswered]
-			if Input.is_action_just_pressed("space"):
-				$Advertisement.visible = false
-				adShown = true
-		if Global.questionsAnswered < 0 || adShown:
+			$Advertisement.showAdd()
+		if Global.questionsAnswered <= 0 || adShown:
 			startChat()
 			if Input.is_action_just_pressed("enter"):
 				var nPayload = {

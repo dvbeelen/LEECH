@@ -59,9 +59,11 @@ shape = SubResource( 2 )
 anims/Open = SubResource( 3 )
 
 [node name="Area" type="Area" parent="." index="2"]
+visible = false
 
 [node name="CollisionShape" type="CollisionShape" parent="Area" index="0"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.048709, 0.798346, -1.51317 )
+visible = false
 shape = SubResource( 4 )
 
 [node name="Cube" parent="." index="3"]
