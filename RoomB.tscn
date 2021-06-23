@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://tools/introTitles/introTitles.tscn" type="PackedScene" id=1]
 [ext_resource path="res://leechat/intro/GameStart.tscn" type="PackedScene" id=2]
@@ -10,6 +10,7 @@
 [ext_resource path="res://Assets/door/Door.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Assets/walls/blueWall/blueWall.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=10]
+[ext_resource path="res://tools/endingBox/endingBox.tscn" type="PackedScene" id=11]
 [ext_resource path="res://tools/interactionZone/interactionZone.tscn" type="PackedScene" id=12]
 [ext_resource path="res://leechat/LEECHat.tscn" type="PackedScene" id=13]
 [ext_resource path="res://tools/staticWallText/staticDisplay.tscn" type="PackedScene" id=14]
@@ -359,7 +360,6 @@ transform = Transform( 1.17, 0, 0, 0, 1, 0, 0, 0, 1.17, -15.0118, 0, 0 )
 
 [node name="Ceiling" type="Spatial" parent="Assets/Room"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6, 0 )
-visible = false
 
 [node name="Floor" parent="Assets/Room/Ceiling" instance=ExtResource( 5 )]
 transform = Transform( 1.17, 0, 0, 0, 1, 0, 0, 0, 1.17, -0.00429678, 0.0316992, 0.0193009 )
@@ -449,3 +449,6 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -15.9062, 1.55124, 0.127139 )
 interaction = "doorOpen"
 
 [node name="HintsChat" parent="." instance=ExtResource( 4 )]
+
+[node name="endingBox" parent="." instance=ExtResource( 11 )]
+transform = Transform( 2, 0, 0, 0, 3, 0, 0, 0, 1.6, 0, 3, -9.25 )
