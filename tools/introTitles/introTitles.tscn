@@ -1,9 +1,7 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://addons/writing_on_the_wall/managers/display_manager.gd" type="Script" id=1]
 [ext_resource path="res://addons/writing_on_the_wall/sub_generator.gd" type="Script" id=2]
-[ext_resource path="res://addons/writing_on_the_wall/subtitle_parts/Display/sub_display.gd" type="Script" id=3]
-[ext_resource path="res://addons/writing_on_the_wall/subtitle_parts/Trigger/sub_trigger.gd" type="Script" id=4]
 [ext_resource path="res://addons/writing_on_the_wall/subtitle_parts/Display/sub_display.tscn" type="PackedScene" id=5]
 [ext_resource path="res://addons/writing_on_the_wall/subtitle_parts/Trigger/sub_trigger.tscn" type="PackedScene" id=6]
 
@@ -15,78 +13,62 @@ story_to_show = "Intro"
 script = ExtResource( 1 )
 path_to_font = "res://fonts/mainFont.tres"
 
-[node name="SubtitleDisplay" type="Spatial" parent="DisplayManager" instance=ExtResource( 5 )]
+[node name="SubtitleDisplay" parent="DisplayManager" instance=ExtResource( 5 )]
 transform = Transform( -1, 0, 3.25841e-07, 0, 1, 0, -3.25841e-07, 0, -1, 0, 2.27412, -0.290849 )
-script = ExtResource( 3 )
 
-[node name="SubtitleDisplay2" type="Spatial" parent="DisplayManager" instance=ExtResource( 5 )]
+[node name="SubtitleDisplay2" parent="DisplayManager" instance=ExtResource( 5 )]
 transform = Transform( -1, 0, -3.25841e-07, 0, 1, 0, 3.25841e-07, 0, -1, -0.0619221, 3.44018, 7.39717 )
-script = ExtResource( 3 )
 
-[node name="SubtitleDisplay3" type="Spatial" parent="DisplayManager" instance=ExtResource( 5 )]
+[node name="SubtitleDisplay3" parent="DisplayManager" instance=ExtResource( 5 )]
 transform = Transform( -1, 0, -3.25841e-07, 0, 1, 0, 3.25841e-07, 0, -1, 0, 3.48423, 7.35344 )
-script = ExtResource( 3 )
 
-[node name="SubtitleDisplay4" type="Spatial" parent="DisplayManager" instance=ExtResource( 5 )]
+[node name="SubtitleDisplay4" parent="DisplayManager" instance=ExtResource( 5 )]
 transform = Transform( -1, 0, -3.25841e-07, 0, 1, 0, 3.25841e-07, 0, -1, 0, 3.6712, 7.02521 )
-script = ExtResource( 3 )
 
-[node name="SubtitleDisplay5" type="Spatial" parent="DisplayManager" instance=ExtResource( 5 )]
+[node name="SubtitleDisplay5" parent="DisplayManager" instance=ExtResource( 5 )]
 transform = Transform( -1.62921e-07, 0, 1, 0, 1, 0, -1, 0, -1.62921e-07, -13.5152, 2.72753, -0.439107 )
-script = ExtResource( 3 )
 
-[node name="SubtitleDisplay6" type="Spatial" parent="DisplayManager" instance=ExtResource( 5 )]
+[node name="SubtitleDisplay6" parent="DisplayManager" instance=ExtResource( 5 )]
 transform = Transform( -1.62921e-07, 0, 1, 0, 1, 0, -1, 0, -1.62921e-07, -19.2808, 2.72753, -0.439107 )
-script = ExtResource( 3 )
 
-[node name="SubtitleDisplay7" type="Spatial" parent="DisplayManager" instance=ExtResource( 5 )]
+[node name="SubtitleDisplay7" parent="DisplayManager" instance=ExtResource( 5 )]
 transform = Transform( -1.62921e-07, 0, -1, 0, 1, 0, 1, 0, -1.62921e-07, 15.0194, 2.72753, -0.439107 )
-script = ExtResource( 3 )
 
-[node name="SubtitleDisplay8" type="Spatial" parent="DisplayManager" instance=ExtResource( 5 )]
+[node name="SubtitleDisplay8" parent="DisplayManager" instance=ExtResource( 5 )]
 transform = Transform( -1.62921e-07, 0, -1, 0, 1, 0, 1, 0, -1.62921e-07, 21.7771, 2.72753, -0.439107 )
-script = ExtResource( 3 )
 
 [node name="Triggers" type="Spatial" parent="."]
 
 [node name="intro" type="Spatial" parent="Triggers"]
 
-[node name="SubtitleTrigger" type="Spatial" parent="Triggers/intro" instance=ExtResource( 6 )]
+[node name="SubtitleTrigger" parent="Triggers/intro" instance=ExtResource( 6 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.921658, -4.18872 )
-script = ExtResource( 4 )
 disable_on_leave = true
 
-[node name="SubtitleTrigger2" type="Spatial" parent="Triggers/intro" instance=ExtResource( 6 )]
+[node name="SubtitleTrigger2" parent="Triggers/intro" instance=ExtResource( 6 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.921658, -1.81419 )
-script = ExtResource( 4 )
 disable_on_leave = true
 
-[node name="SubtitleTrigger3" type="Spatial" parent="Triggers/intro" instance=ExtResource( 6 )]
+[node name="SubtitleTrigger3" parent="Triggers/intro" instance=ExtResource( 6 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.921658, 0.556251 )
-script = ExtResource( 4 )
 disable_on_leave = true
 
-[node name="SubtitleTrigger4" type="Spatial" parent="Triggers/intro" instance=ExtResource( 6 )]
+[node name="SubtitleTrigger4" parent="Triggers/intro" instance=ExtResource( 6 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.921658, 3.01458 )
-script = ExtResource( 4 )
 disable_on_leave = true
 
-[node name="SubtitleTrigger5" type="Spatial" parent="Triggers/intro" instance=ExtResource( 6 )]
+[node name="SubtitleTrigger5" parent="Triggers/intro" instance=ExtResource( 6 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -10.0487, 1.39638, 0.200082 )
-script = ExtResource( 4 )
 disable_on_leave = true
 
-[node name="SubtitleTrigger6" type="Spatial" parent="Triggers/intro" instance=ExtResource( 6 )]
+[node name="SubtitleTrigger6" parent="Triggers/intro" instance=ExtResource( 6 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -15.927, 1.39638, 0.200082 )
-script = ExtResource( 4 )
 disable_on_leave = true
 
-[node name="SubtitleTrigger7" type="Spatial" parent="Triggers/intro" instance=ExtResource( 6 )]
+[node name="SubtitleTrigger7" parent="Triggers/intro" instance=ExtResource( 6 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 17.2162, 1.39638, -0.327906 )
-script = ExtResource( 4 )
 disable_on_leave = true
 
-[node name="SubtitleTrigger8" type="Spatial" parent="Triggers/intro" instance=ExtResource( 6 )]
+[node name="SubtitleTrigger8" parent="Triggers/intro" instance=ExtResource( 6 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 11.3379, 1.39638, -0.327906 )
-script = ExtResource( 4 )
 disable_on_leave = true

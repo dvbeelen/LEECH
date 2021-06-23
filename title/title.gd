@@ -6,5 +6,5 @@ func _on_exit_pressed():
 
 func _on_start_pressed():
 	print("Starting the game...")
-	Global.gotoScene("res://leechat/intro/GameStart.tscn")
-#	Global.gotoScene("res://leechat/LEECHat.tscn")
+#	Global.gotoScene("res://RoomA.tscn")
+	Global.gotoScene("res://RoomB.tscn")

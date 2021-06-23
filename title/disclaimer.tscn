@@ -1,0 +1,61 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://fonts/biggerMain.tres" type="DynamicFont" id=1]
+[ext_resource path="res://title/title.gd" type="Script" id=2]
+[ext_resource path="res://shader/crt_material.tres" type="Material" id=5]
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0.0627451, 0.0980392, 0.0666667, 1 )
+
+[node name="Disclaimer" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="bg" type="Panel" parent="."]
+margin_right = 1024.0
+margin_bottom = 600.0
+custom_styles/panel = SubResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CRT-Shader" type="CanvasLayer" parent="."]
+layer = 0
+
+[node name="ColorRect" type="ColorRect" parent="CRT-Shader"]
+material = ExtResource( 5 )
+margin_right = 1024.0
+margin_bottom = 600.0
+rect_min_size = Vector2( 1024, 600 )
+mouse_filter = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="container" type="VBoxContainer" parent="."]
+margin_right = 1024.0
+margin_bottom = 600.0
+custom_constants/separation = 64
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="container"]
+margin_top = 193.0
+margin_right = 1024.0
+margin_bottom = 406.0
+custom_fonts/font = ExtResource( 1 )
+custom_colors/font_color = Color( 0.00392157, 0.427451, 0.231373, 1 )
+text = "Disclaimer:
+None of the information you give 
+in the game is saved. 
+
+All music and images in this game are made by
+ or with the help of algorithms."
+align = 1
+valign = 1

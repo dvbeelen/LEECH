@@ -14,6 +14,7 @@ func _process(delta):
 		Global.playerStateSwitch()
 
 func pressNumber(numberPressed):
+	SoundManager.start("buttonPress")
 	print('number inserted: ' + String(numberPressed))
 	$display.text = $display.text + numberPressed
 	insertedCode.append(numberPressed)
@@ -25,7 +26,7 @@ func checkCode():
 	if insertedCode == Global.doorCode:
 		print('right code')
 		$display.text = 'CODE CORRECT'
-		yield(get_tree().create_timer(1.5), 'timeout')
+		SoundManager.start("inputCorrect")
 		Global.doorUnlocked = true
 	else:
 		print('wrong code')

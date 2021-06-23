@@ -14,6 +14,7 @@ var doorCode = ['5', '7', '2', '9']
 var introPlayed = false
 var door1opened = false
 var door2opened = false
+var door3opened = false
 var tutorialEndReached = false
 var hintsSeen = 0
 var questionsAnswered = 0
