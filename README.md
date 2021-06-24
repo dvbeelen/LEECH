@@ -1,2 +1,2 @@
 # LEECH
-Game project for the FMH exposition and MediaLab 2
+3D escape room game made for MediaLab 2
